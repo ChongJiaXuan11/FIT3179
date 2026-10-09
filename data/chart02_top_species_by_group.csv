@@ -1,0 +1,91 @@
+taxon_group,scientific_name,common_name,record_count,rank_within_group
+Birds,Gymnorhina tibicen,Australian Magpie,2488518,1
+Birds,Grallina cyanoleuca,Magpie-lark,1920427,2
+Birds,Rhipidura (Sauloprocta) leucophrys,Willie Wagtail,1653674,3
+Birds,Trichoglossus moluccanus,Rainbow Lorikeet,1538132,4
+Birds,Hirundo (Hirundo) neoxena,Welcome Swallow,1518978,5
+Birds,Eolophus roseicapilla,Galah,1443139,6
+Birds,Malurus (Malurus) cyaneus,Superb Fairy-wren,1431016,7
+Birds,Manorina (Myzantha) melanocephala,Noisy Miner,1307881,8
+Birds,Anthochaera (Anthochaera) carunculata,Red Wattlebird,1284509,9
+Birds,Rhipidura (Rhipidura) albiscapa,Grey Fantail,1262079,10
+Birds,Dacelo (Dacelo) novaeguineae,Laughing Kookaburra,1258605,11
+Birds,Cacatua (Cacatua) galerita,Sulphur-crested Cockatoo,1246795,12
+Birds,Anas (Anas) superciliosa,Pacific Black Duck,1239104,13
+Birds,Vanellus (Lobipluvia) miles,Masked Lapwing,1212009,14
+Birds,Ocyphaps lophotes,Crested Pigeon,1141123,15
+Mammals,Wallabia bicolor,Swamp Wallaby,553789,1
+Mammals,Phascolarctos cinereus,Koala,461056,2
+Mammals,Trichosurus vulpecula,Common Brushtail Possum,330062,3
+Amphibians,Crinia signifera,Common Eastern Froglet,307431,1
+Mammals,Macropus giganteus,Eastern Grey Kangaroo,237925,4
+Amphibians,Limnodynastes peronii,Striped Marsh Frog,176413,2
+Mammals,Vulpes vulpes,Fox,169167,5
+Mammals,Rattus fuscipes,Bush Rat,163076,6
+Mammals,Oryctolagus cuniculus,Rabbit,159383,7
+Plants,Lycium ferocissimum,African Boxthorn,158235,1
+Mammals,Pseudocheirus peregrinus,Common Ringtail Possum,153207,8
+Mammals,Vombatus ursinus,Bare-nosed Wombat,136052,9
+Reptiles,Chelonia mydas,Green Turtle,130746,1
+Amphibians,Limnodynastes tasmaniensis,Spotted Marsh Frog,122332,3
+Amphibians,Litoria peronii,Emerald-spotted Tree Frog,119571,4
+Mammals,Tachyglossus aculeatus,Short-beaked Echidna,118223,10
+Amphibians,Litoria fallax,Eastern Dwarf Tree Frog,115922,5
+Mammals,Macropus fuliginosus,Western Grey Kangaroo,111445,11
+Mammals,Mus musculus,House Mouse,110819,12
+Mammals,Notamacropus rufogriseus,Red-necked Wallaby,106533,13
+Reptiles,Crocodylus porosus,Saltwater Crocodile,104331,2
+Mammals,Pteropus poliocephalus,Grey-headed Flying-fox,103987,14
+Plants,Parkinsonia aculeata,Jerusalem Thorn,99703,2
+Plants,Pteridium esculentum,Common Bracken,95448,3
+Plants,Hypochaeris radicata,Rough Cat's Ear,90437,4
+Mammals,Neophoca cinerea,Australian Sea-lion,88012,15
+Plants,Themeda triandra,Kangaroo Grass,84110,5
+Plants,Cirsium vulgare,Spear Thistle,83234,6
+Plants,Nassella trichotoma,Serrated Tussock,83214,7
+Plants,Microlaena stipoides,Weeping Grass,82007,8
+Plants,Lomandra longifolia,Spiny-headed Mat-rush,80147,9
+Amphibians,Limnodynastes dumerilii,Eastern Banjo Frog,79118,6
+Plants,Andropogon gayanus,Gamba Grass,75141,10
+Plants,Cenchrus ciliaris,Buffel Grass,70832,11
+Amphibians,Rhinella marina,Cane Toad,70582,7
+Plants,Rubus fruticosus,Blackberry,68718,12
+Plants,Lomandra filiformis,Lomandra,63229,13
+Plants,Sonchus oleraceus,Common Sow-thistle,61588,14
+Amphibians,Litoria caerulea,Green Tree Frog,61279,8
+Plants,Prosopis pallida,Algaroba,61237,15
+Reptiles,Tiliqua scincoides,Eastern Blue-tongue,60501,3
+Amphibians,Litoria ewingii,Ewing's Tree Frog,59774,9
+Amphibians,Crinia parinsignifera,Eastern Sign-bearing Froglet,54579,10
+Amphibians,Litoria verreauxii,Verreaux's Frog,47070,11
+Reptiles,Intellagama lesueurii,Water Dragon,43725,4
+Reptiles,Heteronotia binoei,Bynoe's Gecko,42412,5
+Amphibians,Litoria aurea,Green And Gold Bell Frog,42392,12
+Reptiles,Chelodina (Chelodina) longicollis,Snake-necked Turtle,37553,6
+Reptiles,Pseudechis porphyriacus,Red-bellied Black Snake,36531,7
+Reptiles,Varanus varius,Lace Monitor,35606,8
+Insects,Synemon plana,Golden Sun Moth,33364,1
+Insects,Apis (Apis) mellifera,European Honey Bee,32003,2
+Reptiles,Lampropholis delicata,Dark-flecked Garden Sunskink,31027,9
+Reptiles,Lampropholis guichenoti,Pale-flecked Garden Sunskink,30932,10
+Reptiles,Tiliqua rugosa,Bobtail,30312,11
+Amphibians,Adelotus brevis,Tusked Frog,29193,13
+Reptiles,Morelia spilota,Carpet Python,28297,12
+Amphibians,Litoria gracilenta,Dainty Green Tree Frog,27831,14
+Reptiles,Emydura macquarii,Macquarie River Turtle,27257,13
+Insects,Heteronympha merope,Common Brown,26959,3
+Amphibians,Litoria latopalmata,Gunther's Frog,26016,15
+Reptiles,Menetia greyii,Common Dwarf Skink,24306,14
+Reptiles,Pseudonaja textilis,Common Brown Snake,22220,15
+Insects,Zizina otis,Common Grass-blue,19631,4
+Insects,Pieris rapae,Cabbage White Butterfly,17612,5
+Insects,Vanessa kershawi,Australian Painted Lady,17111,6
+Insects,Junonia villida,Meadow Argus,16865,7
+Insects,Diplacodes bipunctata,Wandering Percher,16468,8
+Insects,Orthetrum caledonicum,Blue Skimmer,16436,9
+Insects,Euploea corinna,Oleander Butterfly,13128,10
+Insects,Papilio (Princeps) aegeus,Large Citrus Butterfly,12772,11
+Insects,Ischnura heterosticta,Common Bluetail,12547,12
+Insects,Harmonia conformis,Common Spotted Ladybird,12021,13
+Insects,Austroargiolestes icteromelas,Pale-mouth Common Flatwing,11648,14
+Insects,Danaus plexippus,Monarch,11598,15
