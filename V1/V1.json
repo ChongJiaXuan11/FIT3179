@@ -1,0 +1,12 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "title": "Who Gets the Spotlight?",
+  "data": {"url": "data/chart01_taxon_group_counts.csv"},
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "record_count", "type": "quantitative"},
+    "color": {"field": "taxon_group", "type": "nominal"}
+  }
+}
