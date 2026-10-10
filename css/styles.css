@@ -1,0 +1,103 @@
+/* INTRO SECTION STYLES */
+.intro {
+  max-width: 1100px;
+  margin: 40px auto 60px;
+  padding: 0 24px;
+  text-align: center;
+  font-family: 'Georgia', serif;
+}
+
+.intro h1 {
+  font-size: 2.6rem;
+  margin: 0 0 6px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.intro .subtitle {
+  font-size: 1.15rem;
+  color: #555;
+  margin: 0 0 32px;
+  font-style: italic;
+}
+
+.intro-text {
+  display: flex;
+  gap: 36px;
+  text-align: left;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #222;
+}
+
+.intro-text p {
+  flex: 1;
+  margin: 0 0 18px;
+}
+
+@media (max-width: 600px) {
+  .intro h1 { font-size: 2rem; }
+  .intro-text { font-size: 0.98rem; }
+}
+
+
+/* ===================== SECTION 1 CHART LAYOUT ===================== */
+.section-1 {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 24px;
+}
+
+.section-1 h2 {
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  margin: 0 0 24px;
+  text-align: left;
+}
+
+/* Row holding Chart 1 (bar) and Chart 2 (slope) side by side */
+.chart-row {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Individual chart container */
+.chart-container {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+/* Chart 1 — bar chart container */
+#chart01 {
+  flex: 1 1 420px;
+  min-width: 380px;
+}
+
+/* Chart 2 — slope chart container (needs more width for the label columns) */
+#chart02 {
+  flex: 1 1 500px;
+  min-width: 450px;
+}
+
+/* Caption/source line beneath each chart */
+.chart-caption {
+  font-family: Georgia, serif;
+  font-size: 0.82rem;
+  color: #777;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .chart-row {
+    flex-direction: column;
+  }
+  #chart01, #chart02 {
+    min-width: 0;
+    width: 100%;
+  }
+}
+/* ================= END SECTION 1 CHART LAYOUT ================= */

@@ -12,13 +12,47 @@
   
 </head>
 <body>
-  
-<div id="chart01"></div>
+  <header class="intro">
+  <h1>Through the Lens</h1>
+  <p class="subtitle">What Australia's Wildlife Photos Reveal</p>
+ 
+  <div class="intro-text">
+    <p>
+      Every year, millions of Australians point a camera at a bird, a lizard,
+      a wildflower, or a passing whale, and upload it. What started as a
+      hobby has quietly become one of the richest sources of wildlife data
+      scientists have ever had access to: every geotagged photo is a
+      timestamped record of a species existing at a place, whether the
+      person taking it realised it or not.
+    </p>
+    <p>
+      But not everything gets photographed equally. Some animals dominate
+      the frame while others, including species on the brink of extinction,
+      are barely documented at all. This visualisation explores what Australia's
+      wildlife photography collectively reveals and what it leaves out.
+      We trace which animals and plants get the spotlight, where the cameras 
+      cluster, and what the gaps in the record mean for the species conservation 
+      depends on us noticing.
+    </p>
+  </div>
+</header>
+
+<!-- ===================== SECTION 1 ===================== -->
+  <section class="section-1">
+    <h2>Section 1: What Gets Photographed</h2>
+ 
+    <div class="chart-row">
+      <div id="chart01" class="chart-container"></div>
+      <div id="chart02" class="chart-container"></div>
+    </div>
+  </section>
 
 <script type="text/javascript">
-  var spec1 = "js/chart01.vg.json";
-  vegaEmbed('#chart01', spec1).then(function(result) {
+  var spec1 = "V1/V1.json";
+  vegaEmbed('#chart01', spec1, {"actions": false}).then(function(result) {
   }).catch(console.error);
+
+  vegaEmbed('#chart02', 'V2/V2.json', {"actions": false}).then(function(result){}).catch(console.error);
 </script>
 
 </body>

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 420,
+  "title": {
+    "text": "The most-photographed threatened species aren't always the most endangered",
+    "subtitle": "Among Australia's 10 most-photographed EPBC-listed species",
+    "fontSize": 15,
+    "font": "Georgia",
+    "subtitleFont": "Georgia",
+    "subtitleColor": "#666",
+    "anchor": "start"
+  },
+  "background": "white",
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false, "domain": true, "tickSize": 4, "labelFont": "Georgia", "titleFont": "Georgia"}
+  },
+  "data": {"url": "data/chart02_slope_data.csv"},
+  "transform": [
+    {"fold": ["display_doc_rank", "display_threat_rank"], "as": ["axis", "rank"]},
+    {"calculate": "datum.axis == 'display_doc_rank' ? 'Rank by Documentation' : 'Rank by Threat Severity'", "as": "axis_label"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "line", "point": {"filled": true, "size": 40}, "strokeWidth": 1.8},
+      "encoding": {
+        "x": {"field": "axis_label", "type": "nominal", "sort": ["Rank by Documentation", "Rank by Threat Severity"], "axis": {"labelAngle": 0, "title": null, "orient": "bottom", "labelPadding": 12}},
+        "y": {"field": "rank", "type": "quantitative", "sort": "descending", "title": "Rank", "scale": {"domain": [0.3, 10.8]}, "axis": {"format": "d", "tickMinStep": 1, "values": [1,2,3,4,5,6,7,8,9,10]}},
+        "detail": {"field": "common_name"},
+        "color": {
+          "field": "direction", "type": "nominal",
+          "scale": {"domain": ["over", "under", "flat"], "range": ["#2b6cb0", "#dd6b20", "#aaaaaa"]},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "common_name", "type": "nominal"},
+          {"field": "epbc_status", "type": "nominal"},
+          {"field": "record_count", "type": "quantitative"}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.axis_label == 'Rank by Threat Severity'"}],
+      "mark": {"type": "text", "align": "left", "dx": 8, "fontSize": 12, "font": "Georgia"},
+      "encoding": {
+        "x": {"field": "axis_label", "type": "nominal"},
+        "y": {"field": "rank", "type": "quantitative", "sort": "descending"},
+        "text": {"field": "common_name", "type": "nominal"},
+        "color": {
+          "field": "direction", "type": "nominal",
+          "scale": {"domain": ["over", "under", "flat"], "range": ["#2b6cb0", "#dd6b20", "#888"]},
+          "legend": null
+        }
+      }
+    }
+  ]
+}

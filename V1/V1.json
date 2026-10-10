@@ -1,12 +1,44 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 400,
-  "height": 400,
-  "title": "Who Gets the Spotlight?",
+  "height": 420,
+  "title": {
+    "text": "Who Gets the Spotlight?",
+    "subtitle": "Total photo-record counts by taxon group",
+    "fontSize": 16,
+    "font": "Georgia",
+    "subtitleFont": "Georgia",
+    "subtitleColor": "#666",
+    "anchor": "start"
+  },
+  "background": "white",
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false, "labelFont": "Georgia", "titleFont": "Georgia", "domainColor": "#ccc", "tickColor": "#ccc"}
+  },
   "data": {"url": "data/chart01_taxon_group_counts.csv"},
-  "mark": "arc",
+  "mark": {"type": "bar", "cornerRadiusTopLeft": 2, "cornerRadiusTopRight": 2},
   "encoding": {
-    "theta": {"field": "record_count", "type": "quantitative"},
-    "color": {"field": "taxon_group", "type": "nominal"}
+    "x": {
+      "field": "taxon_group", "type": "nominal",
+      "sort": "-y",
+      "axis": {"labelAngle": 0, "title": null}
+    },
+    "y": {
+      "field": "record_count", "type": "quantitative",
+      "axis": {"title": "Photo Records", "format": "~s"}
+    },
+    "color": {
+      "field": "taxon_group", "type": "nominal",
+      "scale": {
+        "domain": ["Birds", "Plants", "Mammals", "Insects", "Reptiles", "Amphibians"],
+        "range": ["#2b6cb0", "#ccc", "#ccc", "#ccc", "#ccc", "#ccc"]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {"field": "taxon_group", "type": "nominal", "title": "Taxon Group"},
+      {"field": "record_count", "type": "quantitative", "title": "Records", "format": ","}
+    ]
   }
 }
