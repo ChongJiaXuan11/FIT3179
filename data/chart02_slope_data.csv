@@ -1,0 +1,11 @@
+common_name,taxon_group,epbc_status,record_count,display_doc_rank,display_threat_rank,direction
+Gang-gang Cockatoo,Birds,Endangered,135907,1,2,under
+Green Turtle,Reptiles,Vulnerable,130746,2,5,under
+Sharp-tailed Sandpiper,Birds,Vulnerable,107038,3,6,under
+Grey-headed Flying-fox,Mammals,Vulnerable,103987,4,7,under
+Eastern Curlew,Birds,Critically Endangered,99925,5,1,over
+Black-browed Albatross,Birds,Vulnerable,96542,6,8,under
+Australian Sea-lion,Mammals,Endangered,88012,7,3,over
+Common Greenshank,Birds,Endangered,82083,8,4,over
+Southern Whiteface,Birds,Vulnerable,70608,9,9,flat
+White-throated Needletail,Birds,Vulnerable,68561,10,10,flat
