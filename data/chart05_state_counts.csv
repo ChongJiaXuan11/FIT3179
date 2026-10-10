@@ -1,9 +1,8 @@
-state,occurrences
-New South Wales,3143711
-Queensland,2225942
-Victoria,1754862
-Western Australia,783444
-South Australia,752193
-Tasmania,354996
-Northern Territory,211044
-Other/Unclassified,5866
+state,occurrences,longitude,latitude
+New South Wales,2618628,147.0,-32.5
+Queensland,1861494,142.5,-20.0
+Victoria,1697297,144.5,-37.0
+South Australia,713936,135.0,-30.0
+Western Australia,664036,122.0,-25.0
+Tasmania,301322,146.5,-42.0
+Northern Territory,159439,133.5,-19.5

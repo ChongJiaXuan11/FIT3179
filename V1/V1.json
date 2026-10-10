@@ -2,16 +2,16 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 400,
   "height": 420,
+  "background": "white",
   "title": {
     "text": "Who Gets the Spotlight?",
-    "subtitle": "Total photo-record counts by taxon group",
+    "subtitle": "Total ALA photographic occurrence records by taxon group (2010 onward)",
     "fontSize": 16,
     "font": "Georgia",
     "subtitleFont": "Georgia",
     "subtitleColor": "#666",
     "anchor": "start"
   },
-  "background": "white",
   "config": {
     "view": {"stroke": null},
     "axis": {"grid": false, "labelFont": "Georgia", "titleFont": "Georgia", "domainColor": "#ccc", "tickColor": "#ccc"}
@@ -31,7 +31,7 @@
     "color": {
       "field": "taxon_group", "type": "nominal",
       "scale": {
-        "domain": ["Birds", "Plants", "Mammals", "Insects", "Reptiles", "Amphibians"],
+        "domain": ["Plants", "Insects", "Birds", "Mammals", "Reptiles", "Amphibians"],
         "range": ["#2b6cb0", "#ccc", "#ccc", "#ccc", "#ccc", "#ccc"]
       },
       "legend": null

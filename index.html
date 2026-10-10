@@ -5,17 +5,17 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-  
-  
+
+
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-  
+
 </head>
 <body>
   <header class="intro">
   <h1>Through the Lens</h1>
   <p class="subtitle">What Australia's Wildlife Photos Reveal</p>
- 
+
   <div class="intro-text">
     <p>
       Every year, millions of Australians point a camera at a bird, a lizard,
@@ -30,8 +30,8 @@
       the frame while others, including species on the brink of extinction,
       are barely documented at all. This visualisation explores what Australia's
       wildlife photography collectively reveals and what it leaves out.
-      We trace which animals and plants get the spotlight, where the cameras 
-      cluster, and what the gaps in the record mean for the species conservation 
+      We trace which animals and plants get the spotlight, where the cameras
+      cluster, and what the gaps in the record mean for the species conservation
       depends on us noticing.
     </p>
   </div>
@@ -40,11 +40,17 @@
 <!-- ===================== SECTION 1 ===================== -->
   <section class="section-1">
     <h2>Section 1: What Gets Photographed</h2>
- 
+
     <div class="chart-row">
       <div id="chart01" class="chart-container"></div>
       <div id="chart02" class="chart-container"></div>
     </div>
+
+    <div id="chart03" class="chart-container chart-full"></div>
+
+    <div id="chart04" class="chart-container chart-full"></div>
+
+    <div id="chart05" class="chart-container chart-full"></div>
   </section>
 
 <script type="text/javascript">
@@ -53,6 +59,12 @@
   }).catch(console.error);
 
   vegaEmbed('#chart02', 'V2/V2.json', {"actions": false}).then(function(result){}).catch(console.error);
+
+  vegaEmbed('#chart03', 'V3/V3.json', {"actions": false}).then(function(result){}).catch(console.error);
+
+  vegaEmbed('#chart04', 'V4/V4.json', {"actions": false}).then(function(result){}).catch(console.error);
+
+  vegaEmbed('#chart05', 'V5/V5.json', {"actions": false}).then(function(result){}).catch(console.error);
 </script>
 
 </body>

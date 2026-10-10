@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 320,
+  "background": "white",
+  "title": {
+    "text": "A Year in the Lens",
+    "subtitle": "Monthly photo submission volume by taxon group",
+    "fontSize": 16,
+    "font": "Georgia",
+    "subtitleFont": "Georgia",
+    "subtitleColor": "#666",
+    "anchor": "start"
+  },
+  "config": {
+    "view": {"stroke": null},
+    "axis": {
+      "grid": false,
+      "labelFont": "Georgia",
+      "titleFont": "Georgia",
+      "domainColor": "#ccc",
+      "tickColor": "#ccc"
+    }
+  },
+  "data": {
+    "url": "data/chart04_monthly_by_taxon.csv"
+  },
+  "mark": {
+    "type": "line",
+    "point": {"filled": true, "size": 25},
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "month",
+      "type": "quantitative",
+      "scale": {"domain": [1, 12]},
+      "axis": {"title": "Month", "tickCount": 12, "format": "d"}
+    },
+    "y": {
+      "field": "occurrences",
+      "type": "quantitative",
+      "axis": {"title": "Photo Records", "format": "~s"}
+    },
+    "color": {
+      "field": "taxon_group",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Birds", "Plants", "Insects", "Mammals", "Reptiles", "Amphibians"],
+        "range": ["#2b6cb0", "#6a9955", "#dd6b20", "#999999", "#c9a227", "#8e6ab8"]
+      },
+      "legend": {
+        "title": "Taxon Group",
+        "orient": "right",
+        "labelFont": "Georgia",
+        "titleFont": "Georgia"
+      }
+    },
+    "tooltip": [
+      {"field": "taxon_group", "type": "nominal", "title": "Group"},
+      {"field": "month", "type": "quantitative", "title": "Month"},
+      {"field": "occurrences", "type": "quantitative", "title": "Records", "format": ","}
+    ]
+  }
+}

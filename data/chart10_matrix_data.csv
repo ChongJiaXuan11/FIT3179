@@ -1,0 +1,73 @@
+taxon_group,epbc_status,coverage_tier,species_count
+Amphibians,Critically Endangered,many,12
+Amphibians,Critically Endangered,few,0
+Amphibians,Critically Endangered,none,6
+Amphibians,Endangered,many,10
+Amphibians,Endangered,few,0
+Amphibians,Endangered,none,3
+Amphibians,Vulnerable,many,7
+Amphibians,Vulnerable,few,0
+Amphibians,Vulnerable,none,8
+Amphibians,Conservation Dependent,many,0
+Amphibians,Conservation Dependent,few,0
+Amphibians,Conservation Dependent,none,0
+Birds,Critically Endangered,many,4
+Birds,Critically Endangered,few,0
+Birds,Critically Endangered,none,6
+Birds,Endangered,many,20
+Birds,Endangered,few,1
+Birds,Endangered,none,11
+Birds,Vulnerable,many,26
+Birds,Vulnerable,few,0
+Birds,Vulnerable,none,14
+Birds,Conservation Dependent,many,0
+Birds,Conservation Dependent,few,0
+Birds,Conservation Dependent,none,0
+Insects,Critically Endangered,many,9
+Insects,Critically Endangered,few,4
+Insects,Critically Endangered,none,1
+Insects,Endangered,many,5
+Insects,Endangered,few,1
+Insects,Endangered,none,1
+Insects,Vulnerable,many,4
+Insects,Vulnerable,few,0
+Insects,Vulnerable,none,0
+Insects,Conservation Dependent,many,0
+Insects,Conservation Dependent,few,0
+Insects,Conservation Dependent,none,0
+Mammals,Critically Endangered,many,6
+Mammals,Critically Endangered,few,1
+Mammals,Critically Endangered,none,0
+Mammals,Endangered,many,31
+Mammals,Endangered,few,0
+Mammals,Endangered,none,0
+Mammals,Vulnerable,many,29
+Mammals,Vulnerable,few,0
+Mammals,Vulnerable,none,2
+Mammals,Conservation Dependent,many,0
+Mammals,Conservation Dependent,few,0
+Mammals,Conservation Dependent,none,0
+Plants,Critically Endangered,many,236
+Plants,Critically Endangered,few,31
+Plants,Critically Endangered,none,4
+Plants,Endangered,many,512
+Plants,Endangered,few,14
+Plants,Endangered,none,9
+Plants,Vulnerable,many,498
+Plants,Vulnerable,few,11
+Plants,Vulnerable,none,10
+Plants,Conservation Dependent,many,0
+Plants,Conservation Dependent,few,0
+Plants,Conservation Dependent,none,0
+Reptiles,Critically Endangered,many,18
+Reptiles,Critically Endangered,few,5
+Reptiles,Critically Endangered,none,2
+Reptiles,Endangered,many,35
+Reptiles,Endangered,few,3
+Reptiles,Endangered,none,1
+Reptiles,Vulnerable,many,28
+Reptiles,Vulnerable,few,2
+Reptiles,Vulnerable,none,1
+Reptiles,Conservation Dependent,many,0
+Reptiles,Conservation Dependent,few,0
+Reptiles,Conservation Dependent,none,0
