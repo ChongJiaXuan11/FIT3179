@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "white",
+  "title": {
+    "text": "Following the Season",
+    "subtitle": "Bird photo-record density across four seasonal snapshots",
+    "fontSize": 16,
+    "font": "Georgia",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "subtitleColor": "#666",
+    "anchor": "start"
+  },
+  "config": {
+    "view": {"stroke": null},
+    "header": {"labelFont": "Helvetica, Arial, sans-serif", "labelFontWeight": "bold", "labelFontSize": 13}
+  },
+  "data": {"url": "data/chart07_seasonal_snapshot.csv"},
+  "facet": {
+    "field": "season",
+    "type": "nominal",
+    "sort": ["Summer (Jan)", "Autumn (Apr)", "Winter (Jul)", "Spring (Oct)"],
+    "header": {"title": null}
+  },
+  "spec": {
+    "width": 480,
+    "height": 430,
+    "projection": {
+      "type": "mercator",
+      "center": [134, -28],
+      "scale": 592,
+      "translate": [240.0, 215.0]
+    },
+    "layer": [
+      {
+        "data": {"sphere": true},
+        "mark": {"type": "geoshape", "fill": "#eaf2f8"}
+      },
+      {
+        "data": {
+          "url": "data/state_boundaries.topojson",
+          "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+        },
+        "mark": {"type": "geoshape", "fill": "#f4f1ea", "stroke": "#b5b5b5", "strokeWidth": 0.6}
+      },
+      {
+        "mark": {"type": "circle", "opacity": 0.55},
+        "encoding": {
+          "longitude": {"field": "lon", "type": "quantitative"},
+          "latitude": {"field": "lat", "type": "quantitative"},
+          "size": {
+            "field": "occurrences", "type": "quantitative",
+            "scale": {"range": [5, 200]},
+            "legend": {"title": "Bird Records"}
+          },
+          "color": {"value": "#2b6cb0"},
+          "tooltip": [{"field": "occurrences", "type": "quantitative", "title": "Records"}]
+        }
+      }
+    ]
+  },
+  "columns": 2
+}

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1000,
+  "height": 530,
+  "background": "white",
+  "title": {
+    "text": "From Species to Conservation Status to Camera",
+    "subtitle": "Species flow: group to status to photo coverage",
+    "fontSize": 16,
+    "font": "Georgia",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "subtitleColor": "#666",
+    "anchor": "start"
+  },
+  "config": {"view": {"stroke": null}},
+  "layer": [
+    {
+      "data": {
+        "url": "data/chart11_sankey_ribbons.csv",
+        "format": {"parse": {"x": "number", "y": "number", "y2": "number"}}
+      },
+      "mark": {"type": "area", "opacity": 0.45, "line": false, "interpolate": "monotone"},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"nice": false}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"reverse": true}},
+        "y2": {"field": "y2"},
+        "detail": {"field": "link_id"},
+        "color": {
+          "field": "color_key", "type": "nominal",
+          "scale": {
+            "domain": ["Plants", "Birds", "Mammals", "Reptiles", "Amphibians", "Insects", "Critically Endangered", "Endangered", "Vulnerable"],
+            "range": ["#17a398", "#2b6cb0", "#999999", "#c9a227", "#8e6ab8", "#dd6b20", "#7a0000", "#d9534f", "#f4a582"]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/chart11_sankey_nodes.csv",
+        "format": {"parse": {"x": "number", "y0": "number", "y1": "number"}}
+      },
+      "transform": [{"calculate": "datum.x + 0.08", "as": "x_end"}],
+      "mark": {"type": "rect", "stroke": "#333", "strokeWidth": 0.5},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"nice": false}},
+        "x2": {"field": "x_end"},
+        "y": {"field": "y0", "type": "quantitative", "axis": null, "scale": {"reverse": true}},
+        "y2": {"field": "y1"},
+        "color": {
+          "field": "name", "type": "nominal",
+          "scale": {
+            "domain": ["Plants", "Birds", "Mammals", "Reptiles", "Amphibians", "Insects", "Critically Endangered", "Endangered", "Vulnerable", "many", "few", "none"],
+            "range": ["#17a398", "#2b6cb0", "#999999", "#c9a227", "#8e6ab8", "#dd6b20", "#7a0000", "#d9534f", "#f4a582", "#2b6cb0", "#9fb8cc", "#d9534f"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "name", "type": "nominal", "title": "Category"},
+          {"field": "stage", "type": "nominal", "title": "Stage"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/chart11_sankey_nodes.csv",
+        "format": {"parse": {"x": "number", "y0": "number", "y1": "number"}}
+      },
+      "transform": [
+        {"calculate": "(datum.y0 + datum.y1) / 2", "as": "y_mid"},
+        {"calculate": "datum.x == 0 ? datum.x : (datum.x == 1 ? datum.x + 0.04 : datum.x + 0.08)", "as": "label_x"}
+      ],
+      "mark": {"type": "text", "fontSize": 10, "font": "Georgia"},
+      "encoding": {
+        "x": {"field": "label_x", "type": "quantitative", "axis": null, "scale": {"nice": false}},
+        "y": {"field": "y_mid", "type": "quantitative", "axis": null, "scale": {"reverse": true}},
+        "text": {"field": "name", "type": "nominal"},
+        "dx": {
+          "condition": [
+            {"test": "datum.x == 0", "value": -8},
+            {"test": "datum.x == 1", "value": 0}
+          ],
+          "value": 8
+        },
+        "align": {
+          "condition": [
+            {"test": "datum.x == 0", "value": "right"},
+            {"test": "datum.x == 1", "value": "center"}
+          ],
+          "value": "left"
+        },
+        "color": {"value": "black"}
+      }
+    }
+  ],
+  "resolve": {"scale": {"x": "shared", "y": "shared"}}
+}

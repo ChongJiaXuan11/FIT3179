@@ -15,7 +15,6 @@ Amphibians,2022,11464
 Amphibians,2023,12509
 Amphibians,2024,16011
 Amphibians,2025,17326
-Amphibians,2026,12676
 Birds,2010,6386
 Birds,2011,9331
 Birds,2012,9370
@@ -32,7 +31,6 @@ Birds,2022,174090
 Birds,2023,245967
 Birds,2024,291139
 Birds,2025,401094
-Birds,2026,336034
 Insects,2010,18881
 Insects,2011,35450
 Insects,2012,12505
@@ -49,7 +47,6 @@ Insects,2022,263596
 Insects,2023,265309
 Insects,2024,335994
 Insects,2025,330847
-Insects,2026,241535
 Mammals,2010,803
 Mammals,2011,923
 Mammals,2012,1236
@@ -66,7 +63,6 @@ Mammals,2022,31838
 Mammals,2023,51267
 Mammals,2024,52328
 Mammals,2025,57330
-Mammals,2026,45405
 Plants,2010,17490
 Plants,2011,17717
 Plants,2012,19124
@@ -83,7 +79,6 @@ Plants,2022,334530
 Plants,2023,412146
 Plants,2024,501603
 Plants,2025,586549
-Plants,2026,414324
 Reptiles,2010,1239
 Reptiles,2011,1369
 Reptiles,2012,1831
@@ -100,4 +95,3 @@ Reptiles,2022,29691
 Reptiles,2023,40880
 Reptiles,2024,50502
 Reptiles,2025,60108
-Reptiles,2026,42698

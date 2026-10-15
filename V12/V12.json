@@ -1,0 +1,138 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "white",
+  "title": {
+    "text": "The Citizen-Science Boom",
+    "subtitle": "Cumulative photo submissions per taxon group, 2010–2025",
+    "fontSize": 16,
+    "font": "Georgia",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "subtitleColor": "#666",
+    "anchor": "start"
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "grid": false,
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif",
+      "domainColor": "#ccc",
+      "tickColor": "#ccc"
+    },
+    "header": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "labelFontWeight": "bold",
+      "labelFontSize": 13
+    }
+  },
+  "data": {
+    "url": "data/chart12_yearly_by_taxon.csv"
+  },
+  "facet": {
+    "field": "taxon_group",
+    "type": "nominal",
+    "columns": 3,
+    "sort": [
+      "Plants",
+      "Insects",
+      "Birds",
+      "Mammals",
+      "Reptiles",
+      "Amphibians"
+    ],
+    "header": {
+      "title": null
+    }
+  },
+  "spec": {
+    "width": 150,
+    "height": 150,
+    "layer": [
+      {
+        "mark": {
+          "type": "area",
+          "line": {
+            "color": "#2b6cb0"
+          },
+          "color": "#2b6cb0",
+          "opacity": 0.25
+        },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "ordinal",
+            "axis": {
+              "title": null,
+              "labelAngle": -45,
+              "values": [
+                2010,
+                2014,
+                2018,
+                2022,
+                2025
+              ]
+            }
+          },
+          "y": {
+            "field": "occurrences",
+            "type": "quantitative",
+            "axis": {
+              "title": "Records",
+              "format": "~s"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "taxon_group",
+              "type": "nominal",
+              "title": "Group"
+            },
+            {
+              "field": "year",
+              "type": "ordinal",
+              "title": "Year"
+            },
+            {
+              "field": "occurrences",
+              "type": "quantitative",
+              "title": "Records",
+              "format": ","
+            }
+          ]
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.taxon_group == 'Plants' && datum.year == 2023"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx": 20,
+          "dy": -10,
+          "fontSize": 9,
+          "font": "Helvetica, Arial, sans-serif",
+          "fontWeight": "bold",
+          "color": "#1a4971"
+        },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "ordinal"
+          },
+          "y": {
+            "field": "occurrences",
+            "type": "quantitative"
+          },
+          "text": {
+            "value": "32× growth since 2010"
+          }
+        }
+      }
+    ]
+  }
+}

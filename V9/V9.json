@@ -1,0 +1,212 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 750,
+  "height": 450,
+  "background": "white",
+  "title": {
+    "text": "The Coverage Gap",
+    "subtitle": "Under- and over-documented species vs. group median",
+    "fontSize": 16,
+    "font": "Georgia",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "subtitleColor": "#666",
+    "anchor": "start"
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "grid": false,
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
+    }
+  },
+  "data": {
+    "url": "data/chart09_lollipop_subset.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.gap_vs_group_median < 0 ? 'under' : 'over'",
+      "as": "direction"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "y": {
+          "field": "common_name",
+          "type": "nominal",
+          "title": null,
+          "sort": [
+            "Curlew Sandpiper",
+            "Greater Sand Plover, Large Sand Plover",
+            "Western Bristlebird",
+            "Eastern Bristlebird",
+            "Lesser Sand Plover, Mongolian Plover",
+            "Great Knot",
+            "Southern Cassowary",
+            "Grey Falcon",
+            "Little Tern",
+            "White-throated Needletail",
+            "Southern Whiteface",
+            "Australian Sea-lion, Australian Sea Lion",
+            "Black-browed Albatross",
+            "Grey-headed Flying-fox",
+            "Green Turtle",
+            "Gang-gang Cockatoo"
+          ]
+        },
+        "x": {
+          "field": "gap_vs_group_median",
+          "type": "quantitative",
+          "title": "Records vs. group median",
+          "scale": {
+            "zero": true
+          }
+        },
+        "x2": {
+          "datum": 0
+        },
+        "color": {
+          "field": "direction",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "under",
+              "over"
+            ],
+            "range": [
+              "#d9534f",
+              "#2b6cb0"
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 70
+      },
+      "encoding": {
+        "y": {
+          "field": "common_name",
+          "type": "nominal",
+          "sort": [
+            "Curlew Sandpiper",
+            "Greater Sand Plover, Large Sand Plover",
+            "Western Bristlebird",
+            "Eastern Bristlebird",
+            "Lesser Sand Plover, Mongolian Plover",
+            "Great Knot",
+            "Southern Cassowary",
+            "Grey Falcon",
+            "Little Tern",
+            "White-throated Needletail",
+            "Southern Whiteface",
+            "Australian Sea-lion, Australian Sea Lion",
+            "Black-browed Albatross",
+            "Grey-headed Flying-fox",
+            "Green Turtle",
+            "Gang-gang Cockatoo"
+          ]
+        },
+        "x": {
+          "field": "gap_vs_group_median",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "direction",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "under",
+              "over"
+            ],
+            "range": [
+              "#d9534f",
+              "#2b6cb0"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "common_name",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "taxon_group",
+            "type": "nominal",
+            "title": "Group"
+          },
+          {
+            "field": "epbc_status",
+            "type": "nominal",
+            "title": "Threat Status"
+          },
+          {
+            "field": "gap_vs_group_median",
+            "type": "quantitative",
+            "title": "Gap",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          3,
+          3
+        ],
+        "color": "#999"
+      },
+      "encoding": {
+        "x": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "y": "Southern Cassowary",
+            "x": 18000
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 11,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontWeight": "bold",
+        "color": "#a33a36"
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "8 species: zero photos, ever"
+        }
+      }
+    }
+  ]
+}

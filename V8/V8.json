@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 500,
+  "background": "white",
+  "title": {
+    "text": "National Parks in Focus",
+    "subtitle": "Photo-record density per 1,000 hectares, parks \u22652,000 ha (2010 onward)",
+    "fontSize": 16,
+    "font": "Georgia",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "subtitleColor": "#666",
+    "anchor": "start"
+  },
+  "config": {
+    "view": {"stroke": null}
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [134, -28],
+    "scale": 750,
+    "translate": [450, 260]
+  },
+  "transform": [
+    {"filter": "datum.density_estimate_reliable"}
+  ],
+  "layer": [
+    {
+      "data": {"sphere": true},
+      "mark": {"type": "geoshape", "fill": "#eaf2f8"}
+    },
+    {
+      "data": {"graticule": {"step": [10, 10]}},
+      "mark": {"type": "geoshape", "fill": null, "stroke": "#cdd9e3", "strokeWidth": 0.6}
+    },
+    {
+      "data": {
+        "url": "data/state_boundaries.topojson",
+        "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+      },
+      "mark": {"type": "geoshape", "fill": "#f4f1ea", "stroke": "#b5b5b5", "strokeWidth": 0.8}
+    },
+    {
+      "data": {"url": "data/chart08_national_parks.csv"},
+      "mark": {"type": "circle", "opacity": 0.6, "stroke": "#1a4971", "strokeWidth": 0.5},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {
+          "field": "occurrences_per_1000ha", "type": "quantitative",
+          "title": "Records per 1,000ha",
+          "scale": {"type": "sqrt", "range": [10, 1500]},
+          "legend": {"format": "~s"}
+        },
+        "color": {"value": "#2b6cb0"},
+        "tooltip": [
+          {"field": "NAME", "type": "nominal", "title": "Park"},
+          {"field": "STATE", "type": "nominal", "title": "State"},
+          {"field": "area_hectares", "type": "quantitative", "title": "Area (ha)", "format": ","},
+          {"field": "occurrences", "type": "quantitative", "title": "Records", "format": ","},
+          {"field": "occurrences_per_1000ha", "type": "quantitative", "title": "Per 1,000ha", "format": ",.0f"}
+        ]
+      }
+    }
+  ]
+}

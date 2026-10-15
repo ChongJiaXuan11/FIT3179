@@ -2,46 +2,92 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "The Threatened and the Ignored",
-    "subtitle": "Share of each group's threatened species with no, few, or many photographic records (1 icon \u2248 1%)",
+    "subtitle": "Photo coverage of threatened species, by group",
     "fontSize": 18,
     "font": "Georgia",
-    "subtitleFont": "Georgia",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleFontSize": 13,
     "subtitleColor": "#666",
     "anchor": "start"
   },
   "background": "white",
   "config": {
-    "view": {"stroke": null},
-    "axis": {"grid": false, "domain": false, "ticks": false, "labels": false, "title": null},
-    "header": {"labelFont": "Georgia", "labelFontWeight": "bold", "labelFontSize": 15}
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "grid": false,
+      "domain": false,
+      "ticks": false,
+      "labels": false,
+      "title": null
+    },
+    "header": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "labelFontWeight": "bold",
+      "labelFontSize": 15
+    }
   },
-  "data": {"url": "data/chart03_pictogram_grid.csv"},
+  "data": {
+    "url": "data/chart03_pictogram_grid.csv"
+  },
   "facet": {
     "field": "taxon_group",
     "type": "nominal",
     "columns": 6,
-    "header": {"title": null},
+    "header": {
+      "title": null
+    },
     "spacing": 24
   },
   "spec": {
     "width": 160,
     "height": 160,
-    "mark": {"type": "square", "size": 100},
+    "mark": {
+      "type": "square",
+      "size": 100
+    },
     "encoding": {
-      "x": {"field": "col", "type": "ordinal"},
-      "y": {"field": "row", "type": "ordinal", "sort": "descending"},
+      "x": {
+        "field": "col",
+        "type": "ordinal"
+      },
+      "y": {
+        "field": "row",
+        "type": "ordinal",
+        "sort": "descending"
+      },
       "color": {
-        "field": "coverage_tier", "type": "nominal",
+        "field": "coverage_tier",
+        "type": "nominal",
         "scale": {
-          "domain": ["many", "few", "none"],
-          "range": ["#2b6cb0", "#9fb8cc", "#d9534f"]
+          "domain": [
+            "many",
+            "few",
+            "none"
+          ],
+          "range": [
+            "#2b6cb0",
+            "#9fb8cc",
+            "#d9534f"
+          ]
         },
-        "legend": {"title": "Photo Coverage", "orient": "bottom", "labelFontSize": 12, "titleFontSize": 13}
+        "legend": {
+          "title": "Photo Coverage",
+          "orient": "bottom",
+          "labelFontSize": 12,
+          "titleFontSize": 13
+        }
       },
       "tooltip": [
-        {"field": "taxon_group", "type": "nominal"},
-        {"field": "coverage_tier", "type": "nominal"}
+        {
+          "field": "taxon_group",
+          "type": "nominal"
+        },
+        {
+          "field": "coverage_tier",
+          "type": "nominal"
+        }
       ]
     }
   }

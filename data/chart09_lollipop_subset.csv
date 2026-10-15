@@ -1,0 +1,17 @@
+taxon_group,scientific_name,common_name,epbc_status,record_count,group_median,gap_vs_group_median,sort_order
+Birds,Calidris ferruginea,Curlew Sandpiper,Critically Endangered,0,1423,-1423,0
+Birds,Charadrius leschenaultii,"Greater Sand Plover, Large Sand Plover",Vulnerable,0,1423,-1423,1
+Birds,Dasyornis longirostris,Western Bristlebird,Endangered,0,1423,-1423,2
+Birds,Dasyornis brachypterus,Eastern Bristlebird,Endangered,0,1423,-1423,3
+Birds,Charadrius mongolus,"Lesser Sand Plover, Mongolian Plover",Endangered,0,1423,-1423,4
+Birds,Calidris tenuirostris,Great Knot,Vulnerable,0,1423,-1423,5
+Birds,Casuarius casuarius,Southern Cassowary,Endangered,0,1423,-1423,6
+Birds,Falco hypoleucos,Grey Falcon,Vulnerable,0,1423,-1423,7
+Birds,Sternula albifrons,Little Tern,Vulnerable,59547,1423,58124,8
+Birds,Hirundapus caudacutus,White-throated Needletail,Vulnerable,68561,1423,67138,9
+Birds,Aphelocephala leucopsis,Southern Whiteface,Vulnerable,70608,1423,69185,10
+Mammals,Neophoca cinerea,"Australian Sea-lion, Australian Sea Lion",Endangered,88012,1335,86677,11
+Birds,Thalassarche melanophris,Black-browed Albatross,Vulnerable,96542,1423,95119,12
+Mammals,Pteropus poliocephalus,Grey-headed Flying-fox,Vulnerable,103987,1335,102652,13
+Reptiles,Chelonia mydas,Green Turtle,Vulnerable,130746,194,130552,14
+Birds,Callocephalon fimbriatum,Gang-gang Cockatoo,Endangered,135907,1423,134484,15

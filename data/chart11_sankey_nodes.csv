@@ -1,0 +1,13 @@
+name,x,y0,y1,stage
+Plants,0,0,1325,Taxon Group
+Birds,0,1340,1422,Taxon Group
+Mammals,0,1437,1506,Taxon Group
+Reptiles,0,1521,1616,Taxon Group
+Amphibians,0,1631,1677,Taxon Group
+Insects,0,1692,1717,Taxon Group
+Critically Endangered,1,0,345,Threat Status
+Endangered,1,360,1017,Threat Status
+Vulnerable,1,1032,1672,Threat Status
+many,2,0,1492,Photo Coverage
+few,2,1507,1580,Photo Coverage
+none,2,1595,1672,Photo Coverage

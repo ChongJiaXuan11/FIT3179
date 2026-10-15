@@ -8,37 +8,65 @@
     "subtitle": "Total ALA photographic occurrence records by taxon group (2010 onward)",
     "fontSize": 16,
     "font": "Georgia",
-    "subtitleFont": "Georgia",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
     "anchor": "start"
   },
   "config": {
     "view": {"stroke": null},
-    "axis": {"grid": false, "labelFont": "Georgia", "titleFont": "Georgia", "domainColor": "#ccc", "tickColor": "#ccc"}
+    "axis": {
+      "grid": false,
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif",
+      "domainColor": "#ccc",
+      "tickColor": "#ccc"
+    }
   },
   "data": {"url": "data/chart01_taxon_group_counts.csv"},
-  "mark": {"type": "bar", "cornerRadiusTopLeft": 2, "cornerRadiusTopRight": 2},
-  "encoding": {
-    "x": {
-      "field": "taxon_group", "type": "nominal",
-      "sort": "-y",
-      "axis": {"labelAngle": 0, "title": null}
+  "layer": [
+    {
+      "mark": {"type": "bar", "cornerRadiusTopLeft": 2, "cornerRadiusTopRight": 2},
+      "encoding": {
+        "x": {
+          "field": "taxon_group", "type": "nominal",
+          "sort": "-y",
+          "axis": {"labelAngle": 0, "title": null}
+        },
+        "y": {
+          "field": "record_count", "type": "quantitative",
+          "axis": {"title": "Photo Records", "format": "~s"}
+        },
+        "color": {
+          "field": "taxon_group", "type": "nominal",
+          "scale": {
+            "domain": ["Plants", "Insects", "Birds", "Mammals", "Reptiles", "Amphibians"],
+            "range": ["#2b6cb0", "#ccc", "#ccc", "#ccc", "#ccc", "#ccc"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "taxon_group", "type": "nominal", "title": "Taxon Group"},
+          {"field": "record_count", "type": "quantitative", "title": "Records", "format": ","}
+        ]
+      }
     },
-    "y": {
-      "field": "record_count", "type": "quantitative",
-      "axis": {"title": "Photo Records", "format": "~s"}
-    },
-    "color": {
-      "field": "taxon_group", "type": "nominal",
-      "scale": {
-        "domain": ["Plants", "Insects", "Birds", "Mammals", "Reptiles", "Amphibians"],
-        "range": ["#2b6cb0", "#ccc", "#ccc", "#ccc", "#ccc", "#ccc"]
+    {
+      "transform": [{"filter": "datum.taxon_group == 'Plants'"}],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -8,
+        "fontSize": 11,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontWeight": "bold",
+        "color": "#1a4971"
       },
-      "legend": null
-    },
-    "tooltip": [
-      {"field": "taxon_group", "type": "nominal", "title": "Taxon Group"},
-      {"field": "record_count", "type": "quantitative", "title": "Records", "format": ","}
-    ]
-  }
+      "encoding": {
+        "x": {"field": "taxon_group", "type": "nominal", "sort": "-y"},
+        "y": {"field": "record_count", "type": "quantitative"},
+        "text": {"value": "#1 \u2014 37% of all records"}
+      }
+    }
+  ]
 }

@@ -1,0 +1,138 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 500,
+  "background": "white",
+  "title": {
+    "text": "Density vs. Population",
+    "subtitle": "Photo records per 100,000 people, by state (2010 onward)",
+    "fontSize": 16,
+    "font": "Georgia",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "subtitleColor": "#666",
+    "anchor": "start"
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -28
+    ],
+    "scale": 750,
+    "translate": [
+      450,
+      260
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "sphere": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eaf2f8"
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "step": [
+            10,
+            10
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#cdd9e3",
+        "strokeWidth": 0.6
+      }
+    },
+    {
+      "data": {
+        "url": "data/state_boundaries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "STE_2021_AUST_GDA2020"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.STE_NAME21",
+          "from": {
+            "data": {
+              "url": "data/chart06_density_by_state.csv"
+            },
+            "key": "state",
+            "fields": [
+              "occurrences",
+              "population_2025",
+              "records_per_100k_pop"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#8a8a8a",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "color": {
+          "field": "records_per_100k_pop",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [
+              25000,
+              35000,
+              50000
+            ],
+            "range": [
+              "#fef0d9",
+              "#fdbb84",
+              "#e34a33",
+              "#b30000"
+            ]
+          },
+          "legend": {
+            "title": "Records per 100k people",
+            "format": ",.0f"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.STE_NAME21",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "occurrences",
+            "type": "quantitative",
+            "title": "Total Records",
+            "format": ","
+          },
+          {
+            "field": "population_2025",
+            "type": "quantitative",
+            "title": "Population",
+            "format": ","
+          },
+          {
+            "field": "records_per_100k_pop",
+            "type": "quantitative",
+            "title": "Per 100k People",
+            "format": ",.0f"
+          }
+        ]
+      }
+    }
+  ]
+}
