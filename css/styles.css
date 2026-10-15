@@ -42,6 +42,11 @@
 }
 
 
+/* Ensure padding doesn't break layout math */
+* {
+  box-sizing: border-box;
+}
+
 /* ===================== SECTION 1 CHART LAYOUT ===================== */
 .section-1 {
   max-width: 1100px;
@@ -62,12 +67,29 @@
   text-align: left;
 }
 
-/* Row holding Chart 1 (bar) and Chart 2 (slope) side by side */
+/* Row holding Chart 1 and Chart 2 side by side */
 .chart-row {
   display: flex;
-  gap: 40px;
-  align-items: flex-start;
+  gap: 24px; /* Reduced gap so charts fit easily side by side */
+  align-items: stretch;
   flex-wrap: wrap;
+}
+
+/* Column wrappers holding text + chart */
+.chart-column {
+  flex: 1 1 340px; /* Flex growth with flexible base width */
+  min-width: 300px; /* Reduced min-width to prevent early wrapping */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Explanation text above charts */
+.chart-description {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #2c3e50;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
 }
 
 /* Individual chart container */
@@ -80,18 +102,14 @@
   display: flex;
   justify-content: center;
   overflow-x: auto;
+  width: 100%;
 }
 
-/* Chart 1 — bar chart container */
-#chart01 {
-  flex: 1 1 420px;
-  min-width: 380px;
-}
-
-/* Chart 2 — slope chart container (needs more width for the label columns) */
-#chart02 {
-  flex: 1 1 500px;
-  min-width: 450px;
+/* Remove rigid min-widths from individual IDs so column wrapper controls sizing */
+#chart01, #chart02 {
+  width: 100%;
+  min-width: 0;
+  flex: 1;
 }
 
 /* Caption/source line beneath each chart */
@@ -103,23 +121,14 @@
   font-style: italic;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .chart-row {
     flex-direction: column;
   }
-  #chart01, #chart02 {
+  .chart-column {
     min-width: 0;
     width: 100%;
   }
-}
-
-/* Restrict chart column/description width to match the 400px chart spec */
-
-.chart-description1 {
-  max-width: 530px;
-  margin-bottom: 12px;
-  line-height: 1.5;
-  color: #2c3e50;
 }
 /* ================= END SECTION 1 CHART LAYOUT ================= */
 
