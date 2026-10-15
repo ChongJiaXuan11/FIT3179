@@ -112,6 +112,15 @@
     width: 100%;
   }
 }
+
+/* Restrict chart column/description width to match the 400px chart spec */
+
+.chart-description1 {
+  max-width: 530px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #2c3e50;
+}
 /* ================= END SECTION 1 CHART LAYOUT ================= */
 
 /* Chart 3 — pictogram, full width below the two-column row */

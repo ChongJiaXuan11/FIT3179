@@ -6,10 +6,8 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-
 </head>
 <body>
   <header class="intro">
@@ -41,54 +39,158 @@
   <section class="section-1">
     <h2>Section 1: What Gets Photographed</h2>
 
+    <!-- Side-by-side charts (Chart 01 & Chart 02) -->
     <div class="chart-row">
-      <div id="chart01" class="chart-container"></div>
-      <div id="chart02" class="chart-container"></div>
+      <div class="chart-column">
+        <div id="chart01" class="chart-container"></div>
+        <div class="chart-description1">
+        <p>Contrary to popular belief that big mammals dominate wildlife photography, but the truth is not.
+           Together with Insects and Birds, 
+          they dwarf the record volume of mammals, reptiles, and amphibians.</p>
+      </div>
+      </div>
+
+      <div class="chart-column">
+        <div id="chart02" class="chart-container"></div>
+        <div class="chart-description1">
+        <p>Photographic volume rarely matches conservation urgency. Critically endangered species like 
+          the Eastern Curlew rank lower in public
+          photographic coverage despite facing extreme extinction risks.</p>
+      </div>
+      </div>
     </div>
 
-    <div id="chart03" class="chart-container chart-full"></div>
+    <!-- Chart 03 -->
+    <div class="chart-block">
+      <div id="chart03" class="chart-container chart-full"></div>
+      <div class="chart-description">
+        <p>Citizen photography naturally favors accessible, easy-to-spot wildlife. Evasive or remote species—especially 
+          threatened frogs and birds—fall into critical data blind spots, leaving conservationists without the basic 
+          photographic proof needed to track extinction risks.</p>
+      </div>
+    </div>
 
-    <div id="chart04" class="chart-container chart-full"></div>
+    <!-- Chart 04 -->
+    <div class="chart-block">
+      <div id="chart04" class="chart-container chart-full"></div>
+      <div class="chart-description">
+        <p>Citizen science data reflects human leisure patterns as much as wildlife activity. Spring weather 
+          brings people outdoors for wildflower blooms, while winter cold creates steep data droughts for 
+          insects—showing where opportunistic photography fails to provide consistent, year-round ecological 
+          tracking.</p>
+      </div>
+    </div>
   </section>
 
+<!-- ===================== SECTION 2 ===================== -->
   <section class="section-1">
     <h2>Section 2: Where Photography Happens</h2>
 
-    <div id="chart05" class="chart-container chart-full"></div>
-    <div id="chart06" class="chart-container chart-full"></div>
-    <div id="chart07" class="chart-container chart-full"></div>
-    <div id="chart08" class="chart-container chart-full"></div>
+    <!-- Chart 05 -->
+    <div class="chart-block">
+      <div id="chart05" class="chart-container chart-full"></div>
+      <div class="chart-description">
+        <p>The geographical distribution of photos reflects human population centers rather than 
+          actual species density. Highly populated states dominate the dataset, leaving massive 
+          spatial data gaps across remote Outback ecosystems where citizen monitoring is needed most..</p>
+      </div>
+    </div>
+
+    <!-- Chart 06 -->
+    <div class="chart-block">
+      <div id="chart06" class="chart-container chart-full"></div>
+      <div class="chart-description">
+        <p>When adjusted for population, the story flips: less populous regions like the Northern Territory 
+          and Tasmania far outpace major urban states in photo density per person. Living close to nature—paired 
+          with high nature tourism—drives significantly higher individual engagement than simply living in a 
+          big city.
+        </p>
+      </div>
+    </div>
+
+    <!-- Chart 07 -->
+    <div class="chart-block">
+      <div id="chart07" class="chart-container chart-full"></div>
+      <div class="chart-description">
+        <p>The seasonal spread of bird photos—especially the winter uptick in northern Australia—reflects 
+          human holiday habits as much as bird migration. As tourists travel north for warm dry-season 
+          weather, their movement creates temporary data spikes, proving how domestic travel cycles shape 
+          citizen-science tracking.
+        </p>
+      </div>
+    </div>
+
+    <!-- Chart 08 -->
+    <div class="chart-block">
+      <div id="chart08" class="chart-container chart-full"></div>
+      <div class="chart-description">
+        <p>Photo density in national parks measures suburban accessibility rather than ecological significance. 
+          Parks sitting on the doorstep of capital cities dominate per-hectare submissions, leaving vast, 
+          remote conservation reserves almost completely unmonitored by public photography.</p>
+      </div>
+    </div>
   </section>
 
+<!-- ===================== SECTION 3 ===================== -->
   <section class="section-1">
     <h2>Section 3: The Conservation Argument</h2>
 
-    <div id="chart09" class="chart-container chart-full"></div>
-    <div id="chart10" class="chart-container chart-full"></div>
-    <div id="chart11" class="chart-container chart-full"></div>
-    <div id="chart12" class="chart-container chart-full"></div>
+    <!-- Chart 09 -->
+    <!-- <div class="chart-block">
+      <div id="chart09" class="chart-container chart-full"></div>
+      <div class="chart-description">
+        <p>Insert your explanation or key insights for Chart 12 here.</p>
+      </div>
+    </div> -->
+
+    <!-- Chart 10 -->
+    <div class="chart-block">
+      <div id="chart10" class="chart-container chart-full"></div>
+      <div class="chart-description">
+        <p>The heavy concentration in plants reflects Australia's official species lists,
+           where plants represent the majority of protected taxa. However, higher legal threat 
+           levels fail to automatically attract public photography, leaving crucial gaps in 
+           scientific documentation where monitoring is needed most.</p>
+      </div>
+    </div>
+
+    <!-- Chart 11 -->
+    <div class="chart-block">
+      <div id="chart11" class="chart-container chart-full"></div>
+      <div class="chart-description">
+        <p>The flow from threat status to camera lens reveals a clear structural disconnect: critical 
+          extinction risk (Critically Endangered) does not guarantee photographic coverage. Without 
+          active guidance, public photography flows toward accessible species rather than those nearest 
+          to extinction.</p>
+      </div>
+    </div>
+
+    <!-- Chart 12 -->
+    <div class="chart-block">
+      <div id="chart12" class="chart-container chart-full"></div>
+      <div class="chart-description">
+        <p>The explosion in photo submissions after 2018 reflects the rise of mobile citizen-science 
+          platforms and automated species identification. However, while digital tools sparked a 32x 
+          surge in plant logging, they failed to narrow data gaps for elusive or nocturnal groups like
+           amphibians and mammals, which remain flat despite 15 years of platform growth.</p>
+      </div>
+    </div>
   </section>
 
+<!-- Vega Embed Scripts -->
 <script type="text/javascript">
   var spec1 = "V1/V1.json";
   vegaEmbed('#chart01', spec1, {"actions": false}).then(function(result) {
   }).catch(console.error);
 
   vegaEmbed('#chart02', 'V2/V2.json', {"actions": false}).then(function(result){}).catch(console.error);
-
   vegaEmbed('#chart03', 'V3/V3.json', {"actions": false}).then(function(result){}).catch(console.error);
-
   vegaEmbed('#chart04', 'V4/V4.json', {"actions": false}).then(function(result){}).catch(console.error);
-
   vegaEmbed('#chart05', 'V5/V5.json', {"actions": false}).then(function(result){}).catch(console.error);
-
   vegaEmbed('#chart06', 'V6/V6.json', {"actions": false}).then(function(result){}).catch(console.error);
-
   vegaEmbed('#chart07', 'V7/V7.json', {"actions": false}).then(function(result){}).catch(console.error);
-
   vegaEmbed('#chart08', 'V8/V8.json', {"actions": false}).then(function(result){}).catch(console.error);
-  vegaEmbed('#chart09', 'V9/V9.json', {"actions": false}).then(function(result){}).catch(console.error);
-
+  // vegaEmbed('#chart09', 'V9/V9.json', {"actions": false}).then(function(result){}).catch(console.error);
   vegaEmbed('#chart10', 'V10/V10.json', {"actions": false}).then(function(result){}).catch(console.error);
   vegaEmbed('#chart11', 'V11/V11.json', {"actions": false}).then(function(result){}).catch(console.error);
   vegaEmbed('#chart12', 'V12/V12.json', {"actions": false}).then(function(result){}).catch(console.error);

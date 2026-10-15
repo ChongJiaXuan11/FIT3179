@@ -28,16 +28,19 @@
       "mark": {"type": "bar", "cornerRadiusTopLeft": 2, "cornerRadiusTopRight": 2},
       "encoding": {
         "x": {
-          "field": "taxon_group", "type": "nominal",
-          "sort": "-y",
+          "field": "taxon_group", 
+          "type": "nominal",
+          "sort": ["Plants", "Insects", "Birds", "Mammals", "Reptiles", "Amphibians"],
           "axis": {"labelAngle": 0, "title": null}
         },
         "y": {
-          "field": "record_count", "type": "quantitative",
+          "field": "record_count", 
+          "type": "quantitative",
           "axis": {"title": "Photo Records", "format": "~s"}
         },
         "color": {
-          "field": "taxon_group", "type": "nominal",
+          "field": "taxon_group", 
+          "type": "nominal",
           "scale": {
             "domain": ["Plants", "Insects", "Birds", "Mammals", "Reptiles", "Amphibians"],
             "range": ["#2b6cb0", "#ccc", "#ccc", "#ccc", "#ccc", "#ccc"]
@@ -63,9 +66,13 @@
         "color": "#1a4971"
       },
       "encoding": {
-        "x": {"field": "taxon_group", "type": "nominal", "sort": "-y"},
+        "x": {
+          "field": "taxon_group", 
+          "type": "nominal",
+          "sort": {"field": "record_count", "order": "descending"}
+        },
         "y": {"field": "record_count", "type": "quantitative"},
-        "text": {"value": "#1 \u2014 37% of all records"}
+        "text": {"value": "#1 — 37% of all records"}
       }
     }
   ]

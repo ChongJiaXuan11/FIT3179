@@ -112,7 +112,7 @@
         "mark": {
           "type": "text",
           "align": "right",
-          "dx": 20,
+          "dx": -10,
           "dy": -10,
           "fontSize": 9,
           "font": "Helvetica, Arial, sans-serif",
