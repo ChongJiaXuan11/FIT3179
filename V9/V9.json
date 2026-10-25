@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 750,
-  "height": 450,
+  "width": "container",
+  "height": 420,
   "background": "white",
   "title": {
-    "text": "The Coverage Gap",
-    "subtitle": "Under- and over-documented species vs. group median",
+    "text": "The Protection Gap",
+    "subtitle": "State-listed threatened species with no federal EPBC protection",
     "fontSize": 16,
     "font": "Georgia",
     "subtitleFont": "Helvetica, Arial, sans-serif",
@@ -13,200 +13,38 @@
     "anchor": "start"
   },
   "config": {
-    "view": {
-      "stroke": null
-    },
-    "axis": {
-      "grid": false,
-      "labelFont": "Helvetica, Arial, sans-serif",
-      "titleFont": "Helvetica, Arial, sans-serif"
-    }
+    "view": {"stroke": null},
+    "axis": {"grid": false, "labelFont": "Helvetica, Arial, sans-serif", "titleFont": "Helvetica, Arial, sans-serif", "domainColor": "#ccc", "tickColor": "#ccc"}
   },
-  "data": {
-    "url": "data/chart09_lollipop_subset.csv"
-  },
+  "data": {"url": "data/chart_protection_gap.csv"},
   "transform": [
-    {
-      "calculate": "datum.gap_vs_group_median < 0 ? 'under' : 'over'",
-      "as": "direction"
-    }
+    {"fold": ["also_epbc_listed", "state_only_gap"], "as": ["status", "count"]},
+    {"calculate": "datum.status == 'also_epbc_listed' ? 'Also Federally Protected' : 'State-Only (No Federal Protection)'", "as": "status_label"}
   ],
-  "layer": [
-    {
-      "mark": {
-        "type": "rule",
-        "strokeWidth": 2
-      },
-      "encoding": {
-        "y": {
-          "field": "common_name",
-          "type": "nominal",
-          "title": null,
-          "sort": [
-            "Curlew Sandpiper",
-            "Greater Sand Plover, Large Sand Plover",
-            "Western Bristlebird",
-            "Eastern Bristlebird",
-            "Lesser Sand Plover, Mongolian Plover",
-            "Great Knot",
-            "Southern Cassowary",
-            "Grey Falcon",
-            "Little Tern",
-            "White-throated Needletail",
-            "Southern Whiteface",
-            "Australian Sea-lion, Australian Sea Lion",
-            "Black-browed Albatross",
-            "Grey-headed Flying-fox",
-            "Green Turtle",
-            "Gang-gang Cockatoo"
-          ]
-        },
-        "x": {
-          "field": "gap_vs_group_median",
-          "type": "quantitative",
-          "title": "Records vs. group median",
-          "scale": {
-            "zero": true
-          }
-        },
-        "x2": {
-          "datum": 0
-        },
-        "color": {
-          "field": "direction",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "under",
-              "over"
-            ],
-            "range": [
-              "#d9534f",
-              "#2b6cb0"
-            ]
-          },
-          "legend": null
-        }
-      }
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "state", "type": "nominal",
+      "sort": {"field": "state_only_gap", "order": "descending"},
+      "axis": {"title": null, "labelAngle": 0}
     },
-    {
-      "mark": {
-        "type": "point",
-        "filled": true,
-        "size": 70
-      },
-      "encoding": {
-        "y": {
-          "field": "common_name",
-          "type": "nominal",
-          "sort": [
-            "Curlew Sandpiper",
-            "Greater Sand Plover, Large Sand Plover",
-            "Western Bristlebird",
-            "Eastern Bristlebird",
-            "Lesser Sand Plover, Mongolian Plover",
-            "Great Knot",
-            "Southern Cassowary",
-            "Grey Falcon",
-            "Little Tern",
-            "White-throated Needletail",
-            "Southern Whiteface",
-            "Australian Sea-lion, Australian Sea Lion",
-            "Black-browed Albatross",
-            "Grey-headed Flying-fox",
-            "Green Turtle",
-            "Gang-gang Cockatoo"
-          ]
-        },
-        "x": {
-          "field": "gap_vs_group_median",
-          "type": "quantitative"
-        },
-        "color": {
-          "field": "direction",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "under",
-              "over"
-            ],
-            "range": [
-              "#d9534f",
-              "#2b6cb0"
-            ]
-          },
-          "legend": null
-        },
-        "tooltip": [
-          {
-            "field": "common_name",
-            "type": "nominal",
-            "title": "Species"
-          },
-          {
-            "field": "taxon_group",
-            "type": "nominal",
-            "title": "Group"
-          },
-          {
-            "field": "epbc_status",
-            "type": "nominal",
-            "title": "Threat Status"
-          },
-          {
-            "field": "gap_vs_group_median",
-            "type": "quantitative",
-            "title": "Gap",
-            "format": ","
-          }
-        ]
-      }
+    "y": {
+      "field": "count", "type": "quantitative",
+      "axis": {"title": "Number of Species"}
     },
-    {
-      "mark": {
-        "type": "rule",
-        "strokeDash": [
-          3,
-          3
-        ],
-        "color": "#999"
+    "color": {
+      "field": "status_label", "type": "nominal",
+      "scale": {
+        "domain": ["State-Only (No Federal Protection)", "Also Federally Protected"],
+        "range": ["#d9534f", "#2b6cb0"]
       },
-      "encoding": {
-        "x": {
-          "datum": 0
-        }
-      }
+      "legend": {"title": null, "orient": "bottom", "labelFont": "Helvetica, Arial, sans-serif"}
     },
-    {
-      "data": {
-        "values": [
-          {
-            "y": "Southern Cassowary",
-            "x": 18000
-          }
-        ]
-      },
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "fontSize": 11,
-        "font": "Helvetica, Arial, sans-serif",
-        "fontWeight": "bold",
-        "color": "#a33a36"
-      },
-      "encoding": {
-        "y": {
-          "field": "y",
-          "type": "nominal"
-        },
-        "x": {
-          "field": "x",
-          "type": "quantitative"
-        },
-        "text": {
-          "value": "8 species: zero photos, ever"
-        }
-      }
-    }
-  ]
+    "order": {"field": "status_label", "sort": "descending"},
+    "tooltip": [
+      {"field": "state", "type": "nominal", "title": "State"},
+      {"field": "status_label", "type": "nominal", "title": "Status"},
+      {"field": "count", "type": "quantitative", "title": "Species"}
+    ]
+  }
 }

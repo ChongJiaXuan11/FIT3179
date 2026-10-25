@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 400,
+  "width": "container",
   "height": 420,
   "background": "white",
   "title": {
     "text": "Who Gets the Spotlight?",
     "subtitle": "Total ALA photographic occurrence records by taxon group (2010 onward)",
-    "fontSize": 16,
+    "fontSize": 18,
     "font": "Georgia",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
@@ -14,13 +14,7 @@
   },
   "config": {
     "view": {"stroke": null},
-    "axis": {
-      "grid": false,
-      "labelFont": "Helvetica, Arial, sans-serif",
-      "titleFont": "Helvetica, Arial, sans-serif",
-      "domainColor": "#ccc",
-      "tickColor": "#ccc"
-    }
+    "axis": {"grid": false, "labelFont": "Helvetica, Arial, sans-serif", "titleFont": "Helvetica, Arial, sans-serif", "domainColor": "#ccc", "tickColor": "#ccc"}
   },
   "data": {"url": "data/chart01_taxon_group_counts.csv"},
   "layer": [
@@ -69,7 +63,7 @@
         "x": {
           "field": "taxon_group", 
           "type": "nominal",
-          "sort": {"field": "record_count", "order": "descending"}
+          "sort": ["Plants", "Insects", "Birds", "Mammals", "Reptiles", "Amphibians"]
         },
         "y": {"field": "record_count", "type": "quantitative"},
         "text": {"value": "#1 — 37% of all records"}

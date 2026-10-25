@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1000,
+  "width": "container",
   "height": 530,
   "background": "white",
   "title": {
     "text": "From Species to Conservation Status to Camera",
     "subtitle": "Species flow: group to status to photo coverage",
-    "fontSize": 16,
+    "fontSize": 18,
     "font": "Georgia",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",

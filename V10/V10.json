@@ -11,93 +11,39 @@
     "anchor": "start"
   },
   "config": {
-    "view": {
-      "stroke": null
-    },
-    "axis": {
-      "grid": false,
-      "labelFont": "Helvetica, Arial, sans-serif",
-      "titleFont": "Helvetica, Arial, sans-serif"
-    },
-    "header": {
-      "labelFont": "Helvetica, Arial, sans-serif",
-      "labelFontWeight": "bold",
-      "labelFontSize": 13
-    }
+    "view": {"stroke": null},
+    "axis": {"grid": false, "labelFont": "Helvetica, Arial, sans-serif", "titleFont": "Helvetica, Arial, sans-serif"},
+    "header": {"labelFont": "Helvetica, Arial, sans-serif", "labelFontWeight": "bold", "labelFontSize": 13}
   },
-  "data": {
-    "url": "data/chart10_matrix_data.csv"
-  },
+  "data": {"url": "data/chart10_matrix_data.csv"},
   "facet": {
     "field": "coverage_tier",
     "type": "nominal",
     "columns": 3,
-    "sort": [
-      "many",
-      "few",
-      "none"
-    ],
-    "header": {
-      "title": null
-    }
+    "sort": ["many", "few", "none"],
+    "header": {"title": null}
   },
   "spec": {
     "width": 250,
     "height": 200,
-    "mark": {
-      "type": "rect",
-      "stroke": "white",
-      "strokeWidth": 1.5
-    },
+    "mark": {"type": "rect", "stroke": "white", "strokeWidth": 1.5},
     "encoding": {
-      "x": {
-        "field": "taxon_group",
-        "type": "nominal",
-        "axis": {
-          "title": null,
-          "labelAngle": -40
-        }
-      },
+      "x": {"field": "taxon_group", "type": "nominal", "axis": {"title": null, "labelAngle": -40}},
       "y": {
-        "field": "epbc_status",
-        "type": "nominal",
-        "sort": [
-          "Critically Endangered",
-          "Endangered",
-          "Vulnerable",
-          "Conservation Dependent"
-        ],
-        "axis": {
-          "title": null
-        }
+        "field": "epbc_status", "type": "nominal",
+        "sort": ["Critically Endangered", "Endangered", "Vulnerable", "Conservation Dependent"],
+        "axis": {"title": null}
       },
       "color": {
-        "field": "species_count",
-        "type": "quantitative",
-        "scale": {
-          "scheme": "reds"
-        },
-        "legend": {
-          "title": "Species Count"
-        }
+        "field": "species_count", "type": "quantitative",
+        "scale": {"type": "sqrt", "scheme": "reds"},
+        "legend": {"title": "Species Count"}
       },
       "tooltip": [
-        {
-          "field": "taxon_group",
-          "type": "nominal"
-        },
-        {
-          "field": "epbc_status",
-          "type": "nominal"
-        },
-        {
-          "field": "coverage_tier",
-          "type": "nominal"
-        },
-        {
-          "field": "species_count",
-          "type": "quantitative"
-        }
+        {"field": "taxon_group", "type": "nominal"},
+        {"field": "epbc_status", "type": "nominal"},
+        {"field": "coverage_tier", "type": "nominal"},
+        {"field": "species_count", "type": "quantitative"}
       ]
     }
   }

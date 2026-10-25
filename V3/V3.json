@@ -6,7 +6,7 @@
     "fontSize": 18,
     "font": "Georgia",
     "subtitleFont": "Helvetica, Arial, sans-serif",
-    "subtitleFontSize": 13,
+    "subtitleFontSize": 16,
     "subtitleColor": "#666",
     "anchor": "start"
   },

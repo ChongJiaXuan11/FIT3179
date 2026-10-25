@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 900,
+  "width": "container",
   "height": 320,
   "background": "white",
   "title": {
     "text": "A Year in the Lens",
-    "subtitle": "Monthly photo submission volume by taxon group",
-    "fontSize": 16,
+    "subtitle": "Monthly photo submission volume by taxon group \u2014 drag to change year",
+    "fontSize": 18,
     "font": "Georgia",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
@@ -16,36 +16,40 @@
     "view": {"stroke": null},
     "axis": {"grid": false, "labelFont": "Helvetica, Arial, sans-serif", "titleFont": "Helvetica, Arial, sans-serif", "domainColor": "#ccc", "tickColor": "#ccc"}
   },
-  "data": {"url": "data/chart04_monthly_by_taxon.csv"},
-  "layer": [
+  "data": {"url": "data/chart04_monthly_by_taxon_year.csv"},
+  "params": [
     {
-      "mark": {"type": "line", "point": {"filled": true, "size": 25}, "strokeWidth": 2},
-      "encoding": {
-        "x": {"field": "month", "type": "quantitative", "scale": {"domain": [1, 12]}, "axis": {"title": "Month", "tickCount": 12, "format": "d"}},
-        "y": {"field": "occurrences", "type": "quantitative", "axis": {"title": "Photo Records", "format": "~s"}},
-        "color": {
-          "field": "taxon_group", "type": "nominal",
-          "scale": {
-            "domain": ["Birds", "Plants", "Insects", "Mammals", "Reptiles", "Amphibians"],
-            "range": ["#2b6cb0", "#6a9955", "#dd6b20", "#999999", "#c9a227", "#8e6ab8"]
-          },
-          "legend": {"title": "Taxon Group", "orient": "right", "labelFont": "Georgia", "titleFont": "Georgia"}
-        },
-        "tooltip": [
-          {"field": "taxon_group", "type": "nominal", "title": "Group"},
-          {"field": "month", "type": "quantitative", "title": "Month"},
-          {"field": "occurrences", "type": "quantitative", "title": "Records", "format": ","}
-        ]
-      }
-    },
-    {
-      "data": {"values": [{"month": 9, "occurrences": 514784}]},
-      "mark": {"type": "text", "align": "left", "dx": 8, "dy": -8, "fontSize": 10, "font": "Helvetica, Arial, sans-serif", "fontWeight": "bold", "color": "#1a6b3c"},
-      "encoding": {
-        "x": {"field": "month", "type": "quantitative"},
-        "y": {"field": "occurrences", "type": "quantitative"},
-        "text": {"value": "Plants peak: wildflower season"}
+      "name": "selected_year",
+      "value": 2025,
+      "bind": {
+        "input": "range",
+        "min": 2010,
+        "max": 2025,
+        "step": 1,
+        "name": "Year: "
       }
     }
-  ]
+  ],
+  "transform": [
+    {"filter": "datum.year == selected_year"}
+  ],
+  "mark": {"type": "line", "point": {"filled": true, "size": 25}, "strokeWidth": 2},
+  "encoding": {
+    "x": {"field": "month", "type": "quantitative", "scale": {"domain": [1, 12]}, "axis": {"title": "Month", "tickCount": 12, "format": "d"}},
+    "y": {"field": "occurrences", "type": "quantitative", "axis": {"title": "Photo Records", "format": "~s"}},
+    "color": {
+      "field": "taxon_group", "type": "nominal",
+      "scale": {
+        "domain": ["Birds", "Plants", "Insects", "Mammals", "Reptiles", "Amphibians"],
+        "range": ["#2b6cb0", "#6a9955", "#dd6b20", "#999999", "#c9a227", "#8e6ab8"]
+      },
+      "legend": {"title": "Taxon Group", "orient": "right", "labelFont": "Georgia", "titleFont": "Georgia"}
+    },
+    "tooltip": [
+      {"field": "taxon_group", "type": "nominal", "title": "Group"},
+      {"field": "year", "type": "quantitative", "title": "Year"},
+      {"field": "month", "type": "quantitative", "title": "Month"},
+      {"field": "occurrences", "type": "quantitative", "title": "Records", "format": ","}
+    ]
+  }
 }
