@@ -68,7 +68,7 @@
           "sort": ["Dandenong Ranges", "Garigal", "Cleland", "Onkaparinga River", "Berowra Valley", "Tamborine", "Barron Gorge", "Glass House Mountains", "Heathcote", "Khappinghat", "John Forrest", "Tarra-Bulga", "Grey Peaks", "Mornington Peninsula", "Midgegooroo"]
         },
         "x": {"field": "occurrences_per_1000ha", "type": "quantitative"},
-        "text": {"value": "#1 \u2014 near Melbourne"}
+        "text": {"value": "near Melbourne"}
       }
     }
   ]

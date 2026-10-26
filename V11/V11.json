@@ -91,6 +91,15 @@
         },
         "color": {"value": "black"}
       }
+    },
+    {
+      "data": {"values": [{"x": 2.08, "y": -60}]},
+      "mark": {"type": "text", "align": "right", "fontSize": 10, "font": "Helvetica, Arial, sans-serif", "fontWeight": "bold", "color": "#1a1a1a"},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative", "scale": {"nice": false}},
+        "y": {"field": "y", "type": "quantitative", "scale": {"reverse": true}},
+        "text": {"value": "90.7% of all threatened species still end up well-documented"}
+      }
     }
   ],
   "resolve": {"scale": {"x": "shared", "y": "shared"}}

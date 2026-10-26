@@ -37,8 +37,8 @@
       }
     },
     {
-      "data": {"values": [{"lon": 147.0, "lat": -32.18}]},
-      "mark": {"type": "text", "align": "left", "dx": 50, "dy": 0, "fontSize": 10, "font": "Helvetica, Arial, sans-serif", "fontWeight": "bold", "color": "#1a4971"},
+      "data": {"values": [{"lon": 154.5, "lat": -30.5}]},
+      "mark": {"type": "text", "align": "left", "dx": 0, "dy": 0, "fontSize": 10, "font": "Helvetica, Arial, sans-serif", "fontWeight": "bold", "color": "#1a4971"},
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"},

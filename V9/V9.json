@@ -21,30 +21,46 @@
     {"fold": ["also_epbc_listed", "state_only_gap"], "as": ["status", "count"]},
     {"calculate": "datum.status == 'also_epbc_listed' ? 'Also Federally Protected' : 'State-Only (No Federal Protection)'", "as": "status_label"}
   ],
-  "mark": "bar",
-  "encoding": {
-    "x": {
-      "field": "state", "type": "nominal",
-      "sort": {"field": "state_only_gap", "order": "descending"},
-      "axis": {"title": null, "labelAngle": 0}
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "state", "type": "nominal",
+          "sort": ["QLD", "VIC", "SA", "TAS", "NSW", "WA", "NT", "ACT"],
+          "axis": {"title": null, "labelAngle": 0}
+        },
+        "y": {
+          "field": "count", "type": "quantitative",
+          "axis": {"title": "Number of Species"}
+        },
+        "color": {
+          "field": "status_label", "type": "nominal",
+          "scale": {
+            "domain": ["State-Only (No Federal Protection)", "Also Federally Protected"],
+            "range": ["#DBC3E3", "#6d4c41"]
+          },
+          "legend": {"title": null, "orient": "bottom", "labelFont": "Helvetica, Arial, sans-serif"}
+        },
+        "order": {"field": "status_label", "sort": "descending"},
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "status_label", "type": "nominal", "title": "Status"},
+          {"field": "count", "type": "quantitative", "title": "Species"}
+        ]
+      }
     },
-    "y": {
-      "field": "count", "type": "quantitative",
-      "axis": {"title": "Number of Species"}
-    },
-    "color": {
-      "field": "status_label", "type": "nominal",
-      "scale": {
-        "domain": ["State-Only (No Federal Protection)", "Also Federally Protected"],
-        "range": ["#DBC3E3", "#6d4c41"]
-      },
-      "legend": {"title": null, "orient": "bottom", "labelFont": "Helvetica, Arial, sans-serif"}
-    },
-    "order": {"field": "status_label", "sort": "descending"},
-    "tooltip": [
-      {"field": "state", "type": "nominal", "title": "State"},
-      {"field": "status_label", "type": "nominal", "title": "Status"},
-      {"field": "count", "type": "quantitative", "title": "Species"}
-    ]
-  }
+    {
+      "data": {"values": [{"state": "QLD", "y": 3050}]},
+      "mark": {"type": "text", "align": "center", "fontSize": 10, "font": "Helvetica, Arial, sans-serif", "fontWeight": "bold", "color": "#1a1a1a"},
+      "encoding": {
+        "x": {
+          "field": "state", "type": "nominal",
+          "sort": ["QLD", "VIC", "SA", "TAS", "NSW", "WA", "NT", "ACT"]
+        },
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"value": "2,290 unprotected"}
+      }
+    }
+  ]
 }

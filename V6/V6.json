@@ -8,7 +8,7 @@
     "subtitle": "Photo records per 100,000 people, by state (2010 onward)",
     "fontSize": 18,
     "font": "Helvetica, Arial, sans-serif",
-    "subtitleFont": "Georgia",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
     "anchor": "start"
   },
@@ -63,6 +63,15 @@
           {"field": "population_2025", "type": "quantitative", "title": "Population", "format": ","},
           {"field": "records_per_100k_pop", "type": "quantitative", "title": "Per 100k People", "format": ",.0f"}
         ]
+      }
+    },
+    {
+      "data": {"values": [{"lon": 133.0, "lat": -9.5}]},
+      "mark": {"type": "text", "align": "center", "fontSize": 10, "font": "Helvetica, Arial, sans-serif", "fontWeight": "bold", "color": "#7a0000"},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"value": "NT: 60,267 per 100k \u2014 more than double any other state"}
       }
     }
   ]

@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 900,
-  "height": 500,
+  "width": 750,
+  "height": 420,
   "background": "white",
   "title": {
     "text": "Where the Record Actually Is",
@@ -13,7 +13,7 @@
     "anchor": "start"
   },
   "config": {"view": {"stroke": null}},
-  "projection": {"type": "mercator", "center": [134, -28], "scale": 700, "translate": [450, 260]},
+  "projection": {"type": "mercator", "center": [134, -28], "scale": 600, "translate": [375, 218]},
   "layer": [
     {"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#eaf2f8"}},
     {"data": {"graticule": {"step": [10, 10]}}, "mark": {"type": "geoshape", "fill": null, "stroke": "#cdd9e3", "strokeWidth": 0.6}},
@@ -50,12 +50,17 @@
       }
     },
     {
-      "data": {"values": [{"lon": 153.5, "lat": -27.0}]},
-      "mark": {"type": "text", "align": "left", "dx": 12, "dy": -6, "fontSize": 10, "font": "Helvetica, Arial, sans-serif", "fontWeight": "bold", "color": "#1a4971"},
+      "data": {
+        "values": [
+          {"lon": 157.0, "lat": -23.3, "label": "South Eastern QLD:"},
+          {"lon": 157.0, "lat": -24.8, "label": "most documented"}
+        ]
+      },
+      "mark": {"type": "text", "align": "left", "dx": 0, "dy": 0, "fontSize": 9, "font": "Helvetica, Arial, sans-serif", "fontWeight": "bold", "color": "#1a4971"},
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"},
-        "text": {"value": "South Eastern Queensland: most documented region"}
+        "text": {"field": "label", "type": "nominal"}
       }
     }
   ]
