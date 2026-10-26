@@ -33,7 +33,13 @@
       "color": {
         "field": "coverage_tier", "type": "nominal",
         "scale": {"domain": ["many", "few", "none"], "range": ["#2b6cb0", "#9fb8cc", "#d9534f"]},
-        "legend": {"title": "Photo Coverage", "orient": "bottom", "labelFontSize": 12, "titleFontSize": 13}
+        "legend": {
+          "title": "Photo Coverage (records per species)",
+          "orient": "bottom",
+          "labelFontSize": 12,
+          "titleFontSize": 13,
+          "labelExpr": "datum.label == 'many' ? 'Many (10+)' : datum.label == 'few' ? 'Few (1\u20139)' : 'None (0)'"
+        }
       },
       "tooltip": [
         {"field": "taxon_group", "type": "nominal"},

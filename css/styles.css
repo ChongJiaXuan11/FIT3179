@@ -90,7 +90,7 @@ html, body {
   flex-direction: column;
 }
 
-/* Explanation text above charts */
+/* Explanation text for charts */
 .chart-description {
   margin-bottom: 12px;
   line-height: 1.5;
