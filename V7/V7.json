@@ -51,7 +51,7 @@
           "latitude": {"field": "lat", "type": "quantitative"},
           "color": {
             "field": "legend_label", "type": "nominal",
-            "scale": {"range": ["#e07a5f"]},
+            "scale": {"range": ["#E49B0F"]},
             "legend": {"title": null, "orient": "bottom", "symbolSize": 60, "labelFontSize": 12, "labelFont": "Helvetica, Arial, sans-serif"}
           }
         }
