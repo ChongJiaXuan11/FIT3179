@@ -6,6 +6,21 @@ html, body {
   overflow-x: hidden;
 }
 
+.page-credit {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
+  line-height: 1.4;
+}
+
+.intro {
+  position: relative;
+}
+
 .intro {
   max-width: 1100px;
   margin: 40px auto 60px;
@@ -90,15 +105,6 @@ html, body {
   flex-direction: column;
 }
 
-/* Explanation text for charts */
-.chart-description {
-  margin-bottom: 12px;
-  line-height: 1.5;
-  color: #2c3e50;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 0.95rem;
-}
-
 /* Individual chart container */
 .chart-container {
   background: #ffffff;
@@ -135,6 +141,33 @@ html, body {
   .chart-column {
     min-width: 0;
     width: 100%;
+  }
+}
+
+/* Two-column chart descriptions — covers BOTH class names used across the page */
+.chart-description,
+.chart-description1 {
+  display: flex;
+  gap: 32px;
+  margin-top: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #2c3e50;
+}
+ 
+.chart-description p,
+.chart-description1 p {
+  flex: 1;
+  margin: 0;
+}
+ 
+/* Mobile fallback — stack to one column on narrow screens */
+@media (max-width: 700px) {
+  .chart-description,
+  .chart-description1 {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 /* ================= END SECTION 1 CHART LAYOUT ================= */
@@ -199,3 +232,29 @@ html, body {
   .conclusion-text { font-size: 0.98rem; flex-direction: column; gap: 14px; }
 }
 /* ================= END CONCLUSION SECTION STYLES ================= */
+
+.credits {
+  max-width: 1100px;
+  margin: 50px auto 40px;
+  padding: 24px 24px 0;
+  border-top: 1px solid #e0ddd4;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.88rem;
+  color: #333;
+  line-height: 1.7;
+}
+
+.credits h3 {
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+}
+
+.credits h3:not(:first-child) {
+  margin-top: 24px;
+}
+
+.credits a {
+  color: #2b6cb0;
+  text-decoration: underline;
+}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
@@ -12,6 +13,7 @@
 </head>
 <body>
   <header class="intro">
+    <div class="page-credit">Created by: Chong Jia Xuan | 25 Oct 2026<br>FIT3179 Data Visualisation</div>
   <h1>Through the Lens</h1>
   <p class="subtitle">What Australia's Wildlife Photos Reveal</p>
 
@@ -19,19 +21,18 @@
     <p>
       Every year, millions of Australians point a camera at a bird, a lizard,
       a wildflower, or a passing whale, and upload it. What started as a
-      hobby has quietly become one of the richest sources of wildlife data
-      scientists have ever had access to: every geotagged photo is a
-      timestamped record of a species existing at a place, whether the
+      hobby has quietly become <strong>one of the richest sources of wildlife
+      data scientists have ever had access to</strong>: every geotagged photo
+      is a timestamped record of a species existing at a place, whether the
       person taking it realised it or not.
     </p>
     <p>
-      But not everything gets photographed equally. Some animals dominate
-      the frame while others, including species on the brink of extinction,
-      are barely documented at all. This visualisation explores what Australia's
-      wildlife photography collectively reveals and what it leaves out.
-      We trace which animals and plants get the spotlight, where the cameras
-      cluster, and what the gaps in the record mean for the species conservation
-      depends on us noticing.
+      But <strong>not everything gets photographed equally</strong>. Some
+      animals dominate the frame while others, including species on the
+      brink of extinction, are barely documented at all. This visualisation
+      traces which animals and plants get the spotlight, where the cameras
+      cluster, and what the gaps in the record mean for the species
+      conservation depends on us noticing.
     </p>
   </div>
 </header>
@@ -45,19 +46,17 @@
       <div class="chart-column">
         <div id="chart01" class="chart-container"></div>
         <div class="chart-description1">
-        <p>Contrary to popular belief that big mammals dominate wildlife photography, but the truth is not.
-           Together with Insects and Birds, 
-          they dwarf the record volume of mammals, reptiles, and amphibians.</p>
-      </div>
+          <p>Plants carry the highest photo count of any group on this page, outpacing birds, mammals, reptiles, and amphibians even when those four are added together. 
+            Most people assume birds or mammals dominate wildlife photography, since they're usually the animals that catch our eye first. This chart shows that assumption simply doesn't hold up.</p>
+        </div>
       </div>
 
       <div class="chart-column">
         <div id="chart02" class="chart-container"></div>
         <div class="chart-description1">
-        <p>Photographic volume rarely matches conservation urgency. Critically endangered species like 
-          the Eastern Curlew rank lower in public
-          photographic coverage despite facing extreme extinction risks.</p>
-      </div>
+          <p>Each line connects a species' documentation rank on the left to its threat severity rank on the right, so a steep, crossing line signals a real mismatch between the two. 
+            The Eastern Curlew makes the point clearly, it's Critically Endangered, yet sits near the bottom for photo coverage, making it one of the least-documented species shown here.</p>
+        </div>
       </div>
     </div>
 
@@ -65,9 +64,8 @@
     <div class="chart-block">
       <div id="chart03" class="chart-container chart-full"></div>
       <div class="chart-description">
-        <p>Citizen photography naturally favors accessible, easy-to-spot wildlife. Evasive or remote species—especially 
-          threatened frogs and birds—fall into critical data blind spots, leaving conservationists without the basic 
-          photographic proof needed to track extinction risks.</p>
+        <p>Each small square stands for one species, colored by how well-documented it is, blue for plenty of photos, pale blue for just a few, and red for none at all.</p>
+        <p>Birds and Amphibians carry the most red squares by far, with roughly 38% of species in each group never having been photographed, even once.</p>
       </div>
     </div>
 
@@ -75,10 +73,8 @@
     <div class="chart-block">
       <div id="chart04" class="chart-container chart-full"></div>
       <div class="chart-description">
-        <p>Citizen science data reflects human leisure patterns as much as wildlife activity. Spring weather 
-          brings people outdoors for wildflower blooms, while winter cold creates steep data droughts for 
-          insects—showing where opportunistic photography fails to provide consistent, year-round ecological 
-          tracking.</p>
+        <p>Drag the slider to move between years and watch how many photos were submitted each month for every taxon group, revealing the seasonal rhythm hidden inside the data.</p>
+        <p>Plants reliably spike every spring during wildflower season, while insect photography drops off sharply each winter, a pattern that repeats almost identically from one year to the next.</p>
       </div>
     </div>
   </section>
@@ -91,9 +87,17 @@
     <div class="chart-block">
       <div id="chart05" class="chart-container chart-full"></div>
       <div class="chart-description">
-        <p>The geographical distribution of photos reflects human population centers rather than 
-          actual species density. Highly populated states dominate the dataset, leaving massive 
-          spatial data gaps across remote Outback ecosystems where citizen monitoring is needed most..</p>
+        <p>Each circle sits over a state, sized by its total photo record count, so the larger the circle, the more photos were submitted from that part of the country.</p>
+        <p>New South Wales clearly holds the largest circle here, meaning the highest raw total, though this view only counts totals and says nothing about population size.</p>
+      </div>
+    </div>
+
+     <!-- Chart 13 -->
+    <div class="chart-block">
+      <div id="chart13" class="chart-container chart-full"></div>
+      <div class="chart-description">
+        <p>Each shape on this map marks one of Australia's 89 official ecological regions, shaded by how many photo records have come from inside its borders, with darker blue meaning more.</p>
+        <p>South Eastern Queensland stands out as the single most-photographed region on the entire map, holding well over a million records, more than double its closest competitor.</p>
       </div>
     </div>
 
@@ -101,11 +105,8 @@
     <div class="chart-block">
       <div id="chart06" class="chart-container chart-full"></div>
       <div class="chart-description">
-        <p>When adjusted for population, the story flips: less populous regions like the Northern Territory 
-          and Tasmania far outpace major urban states in photo density per person. Living close to nature—paired 
-          with high nature tourism—drives significantly higher individual engagement than simply living in a 
-          big city.
-        </p>
+        <p>This map divides each state's photo count by its population, so the shading reflects photos per person rather than a simple raw total across the whole state.</p>
+        <p>Once population enters the picture, the Northern Territory and Tasmania turn the darkest red on the map, revealing individual engagement far higher than in the bigger eastern states.</p>
       </div>
     </div>
 
@@ -113,11 +114,8 @@
     <div class="chart-block">
       <div id="chart07" class="chart-container chart-full"></div>
       <div class="chart-description">
-        <p>The seasonal spread of bird photos—especially the winter uptick in northern Australia—reflects 
-          human holiday habits as much as bird migration. As tourists travel north for warm dry-season 
-          weather, their movement creates temporary data spikes, proving how domestic travel cycles shape 
-          citizen-science tracking.
-        </p>
+        <p>Each dot stands for roughly 75 bird photo records, so wherever dots cluster densely together, that area simply saw more photos taken during that particular season.</p>
+        <p>Notice how dots spread along the northern coastline specifically in winter, as tourists travel north chasing warm, dry-season weather and bring their cameras along for the trip.</p>
       </div>
     </div>
 
@@ -125,12 +123,13 @@
     <div class="chart-block">
       <div id="chart08" class="chart-container chart-full"></div>
       <div class="chart-description">
-        <p>Photo density in national parks measures suburban accessibility rather than ecological significance. 
-          Parks sitting on the doorstep of capital cities dominate per-hectare submissions, leaving vast, 
-          remote conservation reserves almost completely unmonitored by public photography.</p>
+        <p>This chart ranks the 15 national parks with the highest number of photo records per 1,000 hectares, letting small parks with heavy foot traffic stand out against much larger, quieter reserves.</p>
+        <p>Dandenong Ranges, just outside Melbourne, comes out clearly on top, not because it holds anything ecologically rare, but simply because it's easy for city residents to reach on a weekend.</p>
       </div>
-    </div>
+
   </section>
+
+  
 
 <!-- ===================== SECTION 3 ===================== -->
   <section class="section-1">
@@ -140,7 +139,8 @@
     <div class="chart-block">
       <div id="chart09" class="chart-container chart-full"></div>
       <div class="chart-description">
-        <p>Insert your explanation or key insights for Chart 12 here.</p>
+        <p>Each bar represents one state or territory split into two parts, red marks species that state alone considers threatened, and blue marks species also protected under federal law.</p>
+        <p>Queensland carries the largest red segment of any state, with 2,290 species it treats as threatened receiving no federal protection whatsoever, more than anywhere else in the country.</p>
       </div>
     </div>
 
@@ -148,10 +148,8 @@
     <div class="chart-block">
       <div id="chart10" class="chart-container chart-full"></div>
       <div class="chart-description">
-        <p>The heavy concentration in plants reflects Australia's official species lists,
-           where plants represent the majority of protected taxa. However, higher legal threat 
-           levels fail to automatically attract public photography, leaving crucial gaps in 
-           scientific documentation where monitoring is needed most.</p>
+        <p>Each small square represents one combination of taxon group and threat level, with darker red meaning more species fall into that particular combination across the dataset.</p>
+        <p>Plants dominate nearly every panel here, simply because plants make up most of Australia's official threatened species list, not because they happen to be well photographed.</p>
       </div>
     </div>
 
@@ -159,10 +157,8 @@
     <div class="chart-block">
       <div id="chart11" class="chart-container chart-full"></div>
       <div class="chart-description">
-        <p>The flow from threat status to camera lens reveals a clear structural disconnect: critical 
-          extinction risk (Critically Endangered) does not guarantee photographic coverage. Without 
-          active guidance, public photography flows toward accessible species rather than those nearest 
-          to extinction.</p>
+        <p>Follow the flowing bands from left to right to trace how species move from their taxon group, through their official threat status, into how well they've actually been photographed.</p>
+        <p>Being Critically Endangered doesn't appear to guarantee strong photo coverage at all, since the flow shows no consistent link between how threatened a species is and how documented it becomes.</p>
       </div>
     </div>
 
@@ -170,10 +166,8 @@
     <div class="chart-block">
       <div id="chart12" class="chart-container chart-full"></div>
       <div class="chart-description">
-        <p>The explosion in photo submissions after 2018 reflects the rise of mobile citizen-science 
-          platforms and automated species identification. However, while digital tools sparked a 32x 
-          surge in plant logging, they failed to narrow data gaps for elusive or nocturnal groups like
-           amphibians and mammals, which remain flat despite 15 years of platform growth.</p>
+        <p>Each small panel tracks one taxon group's cumulative photo count from 2010 through 2025, and because the values stack up over time, every line can only climb, never fall.</p>
+        <p>Plants show by far the steepest climb, logging roughly 32 times more photos in 2025 than in 2010, while amphibians and mammals barely moved across the same fifteen years.</p>
       </div>
     </div>
   </section>
@@ -192,6 +186,7 @@
   vegaEmbed('#chart10', 'V10/V10.json', {"actions": false}).then(function(result){}).catch(console.error);
   vegaEmbed('#chart11', 'V11/V11.json', {"actions": false}).then(function(result){}).catch(console.error);
   vegaEmbed('#chart12', 'V12/V12.json', {"actions": false}).then(function(result){}).catch(console.error);
+  vegaEmbed('#chart13', 'V13/V13.json', {"actions": false}).then(function(result){}).catch(console.error);
 </script>
 
 <section class="conclusion">
@@ -200,30 +195,44 @@
   <div class="conclusion-text">
     <p>
       What emerges from this data isn't a simple story of neglect — it's a
-      story of uneven attention. Plants and insects, not the birds and
-      mammals most people associate with wildlife photography, generate the
-      largest share of Australia's citizen-science record. Photography
-      clusters where people already are: the parks that top our density
-      rankings sit on the fringes of Melbourne, Sydney and Adelaide, not
-      inside the continent's most biodiverse wilderness. And
-      counterintuitively, it's the Northern Territory and Tasmania — not
-      the populous eastern states — where photographic density per person
-      runs highest, suggesting proximity to nature matters more than
-      proximity to cities once people are already looking.
+      story of uneven attention. <strong>Plants and insects, not the birds
+      and mammals most people associate with wildlife photography, generate
+      the largest share</strong> of Australia's citizen-science record.
+      Photography clusters where people already are: the parks that top our
+      density rankings sit on the fringes of Melbourne, Sydney and Adelaide,
+      not inside the continent's most biodiverse or ecologically significant
+      wilderness.
     </p>
     <p>
-      The conservation picture is more sobering. Roughly one in twenty of
-      Australia's threatened species has never been photographed at all,
-      and the gap is sharpest among Critically Endangered birds — the
-      species for which documentation matters most. At the same time, the
-      overall volume of citizen-science photography has grown more than
-      thirtyfold since 2010, proof that public interest in wildlife is real
-      and expanding. The opportunity this data points to isn't to
-      photograph more — it's to photograph differently: toward the quiet,
-      overlooked, and genuinely at-risk species that a smartphone camera
-      could still help science see for the first time.
+      Counterintuitively, <strong>the Northern Territory and Tasmania —
+      not the populous eastern states — show the highest photographic
+      density per person</strong>. The conservation picture is more
+      sobering: <strong>roughly one in twenty of Australia's threatened
+      species has never been photographed</strong>, and the gap is
+      sharpest among Critically Endangered birds. Citizen-science volume
+      has <strong>grown more than thirtyfold since 2010</strong> — proof
+      the opportunity isn't to photograph more, but to photograph
+      differently.
     </p>
   </div>
+</section>
+
+<section class="credits">
+  <h3>Data Source:</h3>
+  <p>
+    Atlas of Living Australia (ALA) | <a href="https://www.ala.org.au/">ala.org.au</a><br>
+    GBIF Occurrence Cube | <a href="https://www.gbif.org/">gbif.org</a><br>
+    SPRAT / EPBC Act Threatened Species List | <a href="https://www.data.gov.au/">data.gov.au</a><br>
+    Australian Bureau of Statistics, Regional Population 2025 | <a href="https://www.abs.gov.au/">abs.gov.au</a><br>
+    CAPAD (Collaborative Australian Protected Areas Database) | <a href="https://www.data.gov.au/">data.gov.au</a><br>
+    Natural Earth & ABS ASGS Digital Boundaries | <a href="https://www.naturalearthdata.com/">naturalearthdata.com</a><br>
+    IBRA7 Bioregions, Department of Climate Change, Energy, the Environment and Water | <a href="https://www.dcceew.gov.au/">dcceew.gov.au</a>
+  </p>
+
+  <h3>AI acknowledgement</h3>
+  <p>
+    I acknowledge the use of Claude (Anthropic) as an AI assistant throughout this project. Claude was used to assist with data cleaning scripts, chart specification code, debugging, and caption editing. All data, insights, and creative decisions remain my own.
+  </p>
 </section>
 
 </body>

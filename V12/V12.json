@@ -5,7 +5,7 @@
     "text": "The Citizen-Science Boom",
     "subtitle": "Cumulative photo submissions per taxon group, 2010–2025",
     "fontSize": 16,
-    "font": "Georgia",
+    "font": "Helvetica, Arial, sans-serif",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
     "anchor": "start"

@@ -7,7 +7,7 @@
     "text": "Density vs. Population",
     "subtitle": "Photo records per 100,000 people, by state (2010 onward)",
     "fontSize": 18,
-    "font": "Georgia",
+    "font": "Helvetica, Arial, sans-serif",
     "subtitleFont": "Georgia",
     "subtitleColor": "#666",
     "anchor": "start"

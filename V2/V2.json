@@ -6,7 +6,7 @@
     "text": "Photographed \u2260 Endangered",
     "subtitle": "Among Australia's 10 most-photographed EPBC-listed species",
     "fontSize": 18,
-    "font": "Georgia",
+    "font": "Helvetica, Arial, sans-serif",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
     "anchor": "start"
@@ -34,7 +34,7 @@
         "detail": {"field": "common_name"},
         "color": {
           "field": "direction", "type": "nominal",
-          "scale": {"domain": ["over", "under", "flat"], "range": ["#2b6cb0", "#dd6b20", "#aaaaaa"]},
+          "scale": {"domain": ["over", "under", "flat"], "range": ["#c2185b", "#558b2f", "#78909c"]},
           "legend": {
             "title": "Documentation vs. Risk", "orient": "bottom",
             "labelFont": "Helvetica, Arial, sans-serif", "titleFont": "Helvetica, Arial, sans-serif",
@@ -58,7 +58,7 @@
         "text": {"field": "common_name", "type": "nominal"},
         "color": {
           "field": "direction", "type": "nominal",
-          "scale": {"domain": ["over", "under", "flat"], "range": ["#2b6cb0", "#dd6b20", "#888"]},
+          "scale": {"domain": ["over", "under", "flat"], "range": ["#c2185b", "#558b2f", "#78909c"]},
           "legend": null
         }
       }

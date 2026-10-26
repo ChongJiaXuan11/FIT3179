@@ -7,7 +7,7 @@
     "text": "A Year in the Lens",
     "subtitle": "Monthly photo submission volume by taxon group \u2014 drag to change year",
     "fontSize": 18,
-    "font": "Georgia",
+    "font": "Helvetica, Arial, sans-serif",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
     "anchor": "start"
@@ -41,7 +41,7 @@
       "field": "taxon_group", "type": "nominal",
       "scale": {
         "domain": ["Birds", "Plants", "Insects", "Mammals", "Reptiles", "Amphibians"],
-        "range": ["#2b6cb0", "#6a9955", "#dd6b20", "#999999", "#c9a227", "#8e6ab8"]
+        "range": ["#2b6cb0", "#DBE3C3", "#dd6b20", "#999999", "#c9a227", "#8e6ab8"]
       },
       "legend": {"title": "Taxon Group", "orient": "right", "labelFont": "Georgia", "titleFont": "Georgia"}
     },

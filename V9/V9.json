@@ -7,7 +7,7 @@
     "text": "The Protection Gap",
     "subtitle": "State-listed threatened species with no federal EPBC protection",
     "fontSize": 16,
-    "font": "Georgia",
+    "font": "Helvetica, Arial, sans-serif",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
     "anchor": "start"
@@ -36,7 +36,7 @@
       "field": "status_label", "type": "nominal",
       "scale": {
         "domain": ["State-Only (No Federal Protection)", "Also Federally Protected"],
-        "range": ["#d9534f", "#2b6cb0"]
+        "range": ["#DBC3E3", "#6d4c41"]
       },
       "legend": {"title": null, "orient": "bottom", "labelFont": "Helvetica, Arial, sans-serif"}
     },

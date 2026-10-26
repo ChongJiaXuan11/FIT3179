@@ -5,7 +5,7 @@
     "text": "Following the Season",
     "subtitle": "Bird photo-record density across four seasonal snapshots",
     "fontSize": 18,
-    "font": "Georgia",
+    "font": "Helvetica, Arial, sans-serif",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
     "anchor": "start"
@@ -14,7 +14,7 @@
     "view": {"stroke": null},
     "header": {"labelFont": "Helvetica, Arial, sans-serif", "labelFontWeight": "bold", "labelFontSize": 13}
   },
-  "data": {"url": "data/chart07_seasonal_snapshot.csv"},
+  "data": {"url": "data/chart07_dot_density.csv"},
   "facet": {
     "field": "season",
     "type": "nominal",
@@ -35,6 +35,7 @@
         "data": {"sphere": true},
         "mark": {"type": "geoshape", "fill": "#eaf2f8"}
       },
+      {"data": {"graticule": {"step": [10, 10]}}, "mark": {"type": "geoshape", "fill": null, "stroke": "#cdd9e3", "strokeWidth": 0.6}},
       {
         "data": {
           "url": "data/state_boundaries.topojson",
@@ -43,17 +44,16 @@
         "mark": {"type": "geoshape", "fill": "#f4f1ea", "stroke": "#b5b5b5", "strokeWidth": 0.6}
       },
       {
-        "mark": {"type": "circle", "opacity": 0.55},
+        "transform": [{"calculate": "'1 dot \u2248 75 birds photo records'", "as": "legend_label"}],
+        "mark": {"type": "circle", "size": 4, "opacity": 0.5},
         "encoding": {
           "longitude": {"field": "lon", "type": "quantitative"},
           "latitude": {"field": "lat", "type": "quantitative"},
-          "size": {
-            "field": "occurrences", "type": "quantitative",
-            "scale": {"range": [5, 200]},
-            "legend": {"title": "Bird Records"}
-          },
-          "color": {"value": "#2b6cb0"},
-          "tooltip": [{"field": "occurrences", "type": "quantitative", "title": "Records"}]
+          "color": {
+            "field": "legend_label", "type": "nominal",
+            "scale": {"range": ["#e07a5f"]},
+            "legend": {"title": null, "orient": "bottom", "symbolSize": 60, "labelFontSize": 12, "labelFont": "Helvetica, Arial, sans-serif"}
+          }
         }
       }
     ]

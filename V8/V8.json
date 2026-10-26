@@ -1,48 +1,74 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 900,
-  "height": 500,
+  "width": "container",
+  "height": 480,
   "background": "white",
   "title": {
     "text": "National Parks in Focus",
-    "subtitle": "Photo-record density per 1,000 hectares, parks \u22652,000 ha (2010 onward)",
+    "subtitle": "Top 15 parks by photo-record density per 1,000 hectares (2010 onward)",
     "fontSize": 18,
-    "font": "Georgia",
+    "font": "Helvetica, Arial, sans-serif",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
     "anchor": "start"
   },
-  "config": {"view": {"stroke": null}},
-  "projection": {"type": "mercator", "center": [134, -28], "scale": 750, "translate": [450, 260]},
-  "transform": [{"filter": "datum.density_estimate_reliable"}],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false, "labelFont": "Helvetica, Arial, sans-serif", "titleFont": "Helvetica, Arial, sans-serif"}
+  },
+  "data": {"url": "data/chart08_top15_parks.csv"},
   "layer": [
-    {"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#eaf2f8"}},
-    {"data": {"graticule": {"step": [10, 10]}}, "mark": {"type": "geoshape", "fill": null, "stroke": "#cdd9e3", "strokeWidth": 0.6}},
-    {"data": {"url": "data/state_boundaries.topojson", "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}}, "mark": {"type": "geoshape", "fill": "#f4f1ea", "stroke": "#b5b5b5", "strokeWidth": 0.8}},
     {
-      "data": {"url": "data/chart08_national_parks.csv"},
-      "mark": {"type": "circle", "opacity": 0.6, "stroke": "#1a4971", "strokeWidth": 0.5},
+      "mark": {"type": "rule", "strokeWidth": 2, "color": "#ccc"},
       "encoding": {
-        "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
-        "size": {"field": "occurrences_per_1000ha", "type": "quantitative", "title": "Records per 1,000ha", "scale": {"type": "sqrt", "range": [10, 1500]}, "legend": {"format": "~s"}},
-        "color": {"value": "#2b6cb0"},
+        "y": {
+          "field": "NAME", "type": "nominal",
+          "sort": ["Dandenong Ranges", "Garigal", "Cleland", "Onkaparinga River", "Berowra Valley", "Tamborine", "Barron Gorge", "Glass House Mountains", "Heathcote", "Khappinghat", "John Forrest", "Tarra-Bulga", "Grey Peaks", "Mornington Peninsula", "Midgegooroo"],
+          "title": null
+        },
+        "x": {
+          "field": "occurrences_per_1000ha", "type": "quantitative",
+          "title": "Records per 1,000ha", "axis": {"format": "~s"}, "scale": {"zero": true}
+        },
+        "x2": {"datum": 0}
+      }
+    },
+    {
+      "mark": {"type": "point", "filled": true, "size": 130, "stroke": "#1a1a1a", "strokeWidth": 0.6},
+      "encoding": {
+        "y": {
+          "field": "NAME", "type": "nominal",
+          "sort": ["Dandenong Ranges", "Garigal", "Cleland", "Onkaparinga River", "Berowra Valley", "Tamborine", "Barron Gorge", "Glass House Mountains", "Heathcote", "Khappinghat", "John Forrest", "Tarra-Bulga", "Grey Peaks", "Mornington Peninsula", "Midgegooroo"],
+          "title": null
+        },
+        "x": {"field": "occurrences_per_1000ha", "type": "quantitative"},
+        "color": {
+          "field": "STATE", "type": "nominal",
+          "scale": {
+            "domain": ["VIC", "NSW", "SA", "QLD", "WA"],
+            "range": ["#2e7d32", "#1565c0", "#f9a825", "#6a1b9a", "#00838f"]
+          },
+          "legend": {"title": "State", "orient": "bottom", "direction": "horizontal", "columns": 5}
+        },
         "tooltip": [
           {"field": "NAME", "type": "nominal", "title": "Park"},
           {"field": "STATE", "type": "nominal", "title": "State"},
-          {"field": "area_hectares", "type": "quantitative", "title": "Area (ha)", "format": ","},
-          {"field": "occurrences", "type": "quantitative", "title": "Records", "format": ","},
-          {"field": "occurrences_per_1000ha", "type": "quantitative", "title": "Per 1,000ha", "format": ",.0f"}
+          {"field": "occurrences_per_1000ha", "type": "quantitative", "title": "Per 1,000ha", "format": ",.0f"},
+          {"field": "occurrences", "type": "quantitative", "title": "Total Records", "format": ","},
+          {"field": "area_hectares", "type": "quantitative", "title": "Area (ha)", "format": ",.0f"}
         ]
       }
     },
     {
-      "data": {"values": [{"lon": 145.31, "lat": -37.88}]},
-      "mark": {"type": "text", "align": "left", "dx": 30, "dy": 0, "fontSize": 10, "font": "Helvetica, Arial, sans-serif", "fontWeight": "bold", "color": "#1a4971"},
+      "transform": [{"filter": "datum.NAME == 'Dandenong Ranges'"}],
+      "mark": {"type": "text", "align": "left", "dx": 10, "fontSize": 10, "font": "Helvetica, Arial, sans-serif", "fontWeight": "bold", "color": "#1a1a1a"},
       "encoding": {
-        "longitude": {"field": "lon", "type": "quantitative"},
-        "latitude": {"field": "lat", "type": "quantitative"},
-        "text": {"value": "Dandenong Ranges: densest park (near Melbourne)"}
+        "y": {
+          "field": "NAME", "type": "nominal",
+          "sort": ["Dandenong Ranges", "Garigal", "Cleland", "Onkaparinga River", "Berowra Valley", "Tamborine", "Barron Gorge", "Glass House Mountains", "Heathcote", "Khappinghat", "John Forrest", "Tarra-Bulga", "Grey Peaks", "Mornington Peninsula", "Midgegooroo"]
+        },
+        "x": {"field": "occurrences_per_1000ha", "type": "quantitative"},
+        "text": {"value": "#1 \u2014 near Melbourne"}
       }
     }
   ]

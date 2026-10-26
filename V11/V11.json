@@ -7,7 +7,7 @@
     "text": "From Species to Conservation Status to Camera",
     "subtitle": "Species flow: group to status to photo coverage",
     "fontSize": 18,
-    "font": "Georgia",
+    "font": "Helvetica, Arial, sans-serif",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
     "anchor": "start"
@@ -29,7 +29,7 @@
           "field": "color_key", "type": "nominal",
           "scale": {
             "domain": ["Plants", "Birds", "Mammals", "Reptiles", "Amphibians", "Insects", "Critically Endangered", "Endangered", "Vulnerable"],
-            "range": ["#17a398", "#2b6cb0", "#999999", "#c9a227", "#8e6ab8", "#dd6b20", "#7a0000", "#d9534f", "#f4a582"]
+            "range": ["#8d6e63", "#2b6cb0", "#999999", "#c9a227", "#8e6ab8", "#dd6b20", "#7a0000", "#d9534f", "#f4a582"]
           },
           "legend": null
         }
@@ -51,7 +51,7 @@
           "field": "name", "type": "nominal",
           "scale": {
             "domain": ["Plants", "Birds", "Mammals", "Reptiles", "Amphibians", "Insects", "Critically Endangered", "Endangered", "Vulnerable", "many", "few", "none"],
-            "range": ["#17a398", "#2b6cb0", "#999999", "#c9a227", "#8e6ab8", "#dd6b20", "#7a0000", "#d9534f", "#f4a582", "#2b6cb0", "#9fb8cc", "#d9534f"]
+            "range": ["#8d6e63", "#2b6cb0", "#999999", "#c9a227", "#8e6ab8", "#dd6b20", "#7a0000", "#d9534f", "#f4a582", "#34568b", "#b0bec5", "#ad1457"]
           },
           "legend": null
         },

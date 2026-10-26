@@ -7,7 +7,7 @@
     "text": "Who Gets the Spotlight?",
     "subtitle": "Total ALA photographic occurrence records by taxon group (2010 onward)",
     "fontSize": 18,
-    "font": "Georgia",
+    "font": "Helvetica, Arial, sans-serif",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
     "anchor": "start"
@@ -33,11 +33,10 @@
           "axis": {"title": "Photo Records", "format": "~s"}
         },
         "color": {
-          "field": "taxon_group", 
-          "type": "nominal",
+          "field": "taxon_group", "type": "nominal",
           "scale": {
             "domain": ["Plants", "Insects", "Birds", "Mammals", "Reptiles", "Amphibians"],
-            "range": ["#2b6cb0", "#ccc", "#ccc", "#ccc", "#ccc", "#ccc"]
+            "range": ["#DBE3C3", "#ccc", "#ccc", "#ccc", "#ccc", "#ccc"]
           },
           "legend": null
         },

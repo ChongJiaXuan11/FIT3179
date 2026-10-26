@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 500,
+  "background": "white",
+  "title": {
+    "text": "Where the Record Actually Is",
+    "subtitle": "Photo-record volume by ecological bioregion (2010 onward)",
+    "fontSize": 18,
+    "font": "Helvetica, Arial, sans-serif",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "subtitleColor": "#666",
+    "anchor": "start"
+  },
+  "config": {"view": {"stroke": null}},
+  "projection": {"type": "mercator", "center": [134, -28], "scale": 700, "translate": [450, 260]},
+  "layer": [
+    {"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#eaf2f8"}},
+    {"data": {"graticule": {"step": [10, 10]}}, "mark": {"type": "geoshape", "fill": null, "stroke": "#cdd9e3", "strokeWidth": 0.6}},
+    {
+      "data": {
+        "url": "data/ibra_simplified.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "Interim_Biogeographic_Regionalisation_for_Australia_(IBRA)_Version_7.1_(Regions)"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.REG_NAME_7",
+          "from": {
+            "data": {"url": "data/bioregion_occurrences.csv"},
+            "key": "bioregion",
+            "fields": ["occurrences"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 0.3},
+      "encoding": {
+        "color": {
+          "field": "occurrences", "type": "quantitative",
+          "title": "Photo Records",
+          "scale": {"type": "symlog", "scheme": "blues"},
+          "legend": {"format": "~s", "orient": "bottom", "labelFont": "Helvetica, Arial, sans-serif", "titleFont": "Helvetica, Arial, sans-serif"}
+        },
+        "tooltip": [
+          {"field": "properties.REG_NAME_7", "type": "nominal", "title": "Bioregion"},
+          {"field": "occurrences", "type": "quantitative", "title": "Records", "format": ","}
+        ]
+      }
+    },
+    {
+      "data": {"values": [{"lon": 153.5, "lat": -27.0}]},
+      "mark": {"type": "text", "align": "left", "dx": 12, "dy": -6, "fontSize": 10, "font": "Helvetica, Arial, sans-serif", "fontWeight": "bold", "color": "#1a4971"},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"value": "South Eastern Queensland: most documented region"}
+      }
+    }
+  ]
+}

@@ -4,7 +4,7 @@
     "text": "The Threatened and the Ignored",
     "subtitle": "Birds & Amphibians: ~38% never photographed",
     "fontSize": 18,
-    "font": "Georgia",
+    "font": "Helvetica, Arial, sans-serif",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleFontSize": 16,
     "subtitleColor": "#666",
@@ -32,12 +32,10 @@
       "y": {"field": "row", "type": "ordinal", "sort": "descending"},
       "color": {
         "field": "coverage_tier", "type": "nominal",
-        "scale": {"domain": ["many", "few", "none"], "range": ["#2b6cb0", "#9fb8cc", "#d9534f"]},
+        "scale": {"domain": ["many", "few", "none"], "range": ["#00838f", "#b0bec5", "#ad1457"]},
         "legend": {
           "title": "Photo Coverage (records per species)",
-          "orient": "bottom",
-          "labelFontSize": 12,
-          "titleFontSize": 13,
+          "orient": "bottom", "labelFontSize": 12, "titleFontSize": 13,
           "labelExpr": "datum.label == 'many' ? 'Many (10+)' : datum.label == 'few' ? 'Few (1\u20139)' : 'None (0)'"
         }
       },
