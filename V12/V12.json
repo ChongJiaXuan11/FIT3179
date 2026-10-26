@@ -54,9 +54,9 @@
         "mark": {
           "type": "area",
           "line": {
-            "color": "#2b6cb0"
+            "color": "#FFBF00"
           },
-          "color": "#2b6cb0",
+          "color": "#FFBF00",
           "opacity": 0.25
         },
         "encoding": {
@@ -117,7 +117,7 @@
           "fontSize": 9,
           "font": "Helvetica, Arial, sans-serif",
           "fontWeight": "bold",
-          "color": "#1a4971"
+          "color": "#030303"
         },
         "encoding": {
           "x": {

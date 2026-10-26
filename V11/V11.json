@@ -1,106 +1,328 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 530,
+  "height": 600,
   "background": "white",
   "title": {
     "text": "From Species to Conservation Status to Camera",
     "subtitle": "Species flow: group to status to photo coverage",
     "fontSize": 18,
-    "font": "Helvetica, Arial, sans-serif",
+    "font": "Georgia",
     "subtitleFont": "Helvetica, Arial, sans-serif",
     "subtitleColor": "#666",
     "anchor": "start"
   },
-  "config": {"view": {"stroke": null}},
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  },
   "layer": [
     {
       "data": {
         "url": "data/chart11_sankey_ribbons.csv",
-        "format": {"parse": {"x": "number", "y": "number", "y2": "number"}}
-      },
-      "mark": {"type": "area", "opacity": 0.45, "line": false, "interpolate": "monotone"},
-      "encoding": {
-        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"nice": false}},
-        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"reverse": true}},
-        "y2": {"field": "y2"},
-        "detail": {"field": "link_id"},
-        "color": {
-          "field": "color_key", "type": "nominal",
-          "scale": {
-            "domain": ["Plants", "Birds", "Mammals", "Reptiles", "Amphibians", "Insects", "Critically Endangered", "Endangered", "Vulnerable"],
-            "range": ["#8d6e63", "#2b6cb0", "#999999", "#c9a227", "#8e6ab8", "#dd6b20", "#7a0000", "#d9534f", "#f4a582"]
-          },
-          "legend": null
+        "format": {
+          "parse": {
+            "x": "number",
+            "y": "number",
+            "y2": "number"
+          }
         }
-      }
-    },
-    {
-      "data": {
-        "url": "data/chart11_sankey_nodes.csv",
-        "format": {"parse": {"x": "number", "y0": "number", "y1": "number"}}
       },
-      "transform": [{"calculate": "datum.x + 0.08", "as": "x_end"}],
-      "mark": {"type": "rect", "stroke": "#333", "strokeWidth": 0.5},
+      "mark": {
+        "type": "area",
+        "opacity": 0.45,
+        "line": false,
+        "interpolate": "monotone"
+      },
       "encoding": {
-        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"nice": false}},
-        "x2": {"field": "x_end"},
-        "y": {"field": "y0", "type": "quantitative", "axis": null, "scale": {"reverse": true}},
-        "y2": {"field": "y1"},
-        "color": {
-          "field": "name", "type": "nominal",
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "axis": null,
           "scale": {
-            "domain": ["Plants", "Birds", "Mammals", "Reptiles", "Amphibians", "Insects", "Critically Endangered", "Endangered", "Vulnerable", "many", "few", "none"],
-            "range": ["#8d6e63", "#2b6cb0", "#999999", "#c9a227", "#8e6ab8", "#dd6b20", "#7a0000", "#d9534f", "#f4a582", "#34568b", "#b0bec5", "#ad1457"]
+            "nice": false
+          }
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "reverse": true
+          }
+        },
+        "y2": {
+          "field": "y2"
+        },
+        "detail": {
+          "field": "link_id"
+        },
+        "color": {
+          "field": "color_key",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Plants",
+              "Birds",
+              "Mammals",
+              "Reptiles",
+              "Amphibians",
+              "Insects",
+              "Critically Endangered",
+              "Endangered",
+              "Vulnerable",
+              "many",
+              "few",
+              "none"
+            ],
+            "range": [
+              "#8d6e63",
+              "#2b6cb0",
+              "#999999",
+              "#c9a227",
+              "#8e6ab8",
+              "#dd6b20",
+              "#7a0000",
+              "#d9534f",
+              "#f4a582",
+              "#34568b",
+              "#b0bec5",
+              "#ad1457"
+            ]
           },
           "legend": null
         },
         "tooltip": [
-          {"field": "name", "type": "nominal", "title": "Category"},
-          {"field": "stage", "type": "nominal", "title": "Stage"}
+          {
+            "field": "source",
+            "type": "nominal",
+            "title": "From"
+          },
+          {
+            "field": "target",
+            "type": "nominal",
+            "title": "To"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "title": "Species",
+            "format": ","
+          }
         ]
       }
     },
     {
       "data": {
         "url": "data/chart11_sankey_nodes.csv",
-        "format": {"parse": {"x": "number", "y0": "number", "y1": "number"}}
+        "format": {
+          "parse": {
+            "x": "number",
+            "y0": "number",
+            "y1": "number"
+          }
+        }
       },
       "transform": [
-        {"calculate": "(datum.y0 + datum.y1) / 2", "as": "y_mid"},
-        {"calculate": "datum.x == 0 ? datum.x : (datum.x == 1 ? datum.x + 0.04 : datum.x + 0.08)", "as": "label_x"}
+        {
+          "calculate": "datum.x + 0.05",
+          "as": "x_end"
+        }
       ],
-      "mark": {"type": "text", "fontSize": 10, "font": "Georgia"},
+      "mark": {
+        "type": "rect",
+        "stroke": "#333333",
+        "strokeWidth": 0.5
+      },
       "encoding": {
-        "x": {"field": "label_x", "type": "quantitative", "axis": null, "scale": {"nice": false}},
-        "y": {"field": "y_mid", "type": "quantitative", "axis": null, "scale": {"reverse": true}},
-        "text": {"field": "name", "type": "nominal"},
-        "dx": {
-          "condition": [
-            {"test": "datum.x == 0", "value": -8},
-            {"test": "datum.x == 1", "value": 0}
-          ],
-          "value": 8
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "nice": false
+          }
         },
-        "align": {
-          "condition": [
-            {"test": "datum.x == 0", "value": "right"},
-            {"test": "datum.x == 1", "value": "center"}
-          ],
-          "value": "left"
+        "x2": {
+          "field": "x_end"
         },
-        "color": {"value": "black"}
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "reverse": true
+          }
+        },
+        "y2": {
+          "field": "y1"
+        },
+        "color": {
+          "field": "name",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Plants",
+              "Birds",
+              "Mammals",
+              "Reptiles",
+              "Amphibians",
+              "Insects",
+              "Critically Endangered",
+              "Endangered",
+              "Vulnerable",
+              "many",
+              "few",
+              "none"
+            ],
+            "range": [
+              "#8d6e63",
+              "#2b6cb0",
+              "#999999",
+              "#c9a227",
+              "#8e6ab8",
+              "#dd6b20",
+              "#7a0000",
+              "#d9534f",
+              "#f4a582",
+              "#34568b",
+              "#b0bec5",
+              "#ad1457"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "type": "nominal",
+            "title": "Category"
+          },
+          {
+            "field": "stage",
+            "type": "nominal",
+            "title": "Stage"
+          }
+        ]
       }
     },
     {
-      "data": {"values": [{"x": 2.08, "y": -60}]},
-      "mark": {"type": "text", "align": "right", "fontSize": 10, "font": "Helvetica, Arial, sans-serif", "fontWeight": "bold", "color": "#1a1a1a"},
+      "data": {
+        "url": "data/chart11_sankey_nodes.csv",
+        "format": {
+          "parse": {
+            "x": "number",
+            "y0": "number",
+            "y1": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "calculate": "(datum.y0 + datum.y1) / 2",
+          "as": "y_mid"
+        },
+        {
+          "calculate": "datum.x == 0 ? datum.x - 0.015 : (datum.x == 1 ? datum.x + 0.055 : datum.x + 0.06)",
+          "as": "label_x"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "font": "Georgia"
+      },
       "encoding": {
-        "x": {"field": "x", "type": "quantitative", "scale": {"nice": false}},
-        "y": {"field": "y", "type": "quantitative", "scale": {"reverse": true}},
-        "text": {"value": "90.7% of all threatened species still end up well-documented"}
+        "x": {
+          "field": "label_x",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "nice": false
+          }
+        },
+        "y": {
+          "field": "y_mid",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "reverse": true
+          }
+        },
+        "text": {
+          "field": "name",
+          "type": "nominal"
+        },
+        "dy": {
+          "condition": [
+            {
+              "test": "datum.name == 'Amphibians'",
+              "value": -6
+            },
+            {
+              "test": "datum.name == 'Insects'",
+              "value": 6
+            }
+          ],
+          "value": 0
+        },
+        "align": {
+          "condition": [
+            {
+              "test": "datum.x == 0",
+              "value": "right"
+            }
+          ],
+          "value": "left"
+        },
+        "color": {
+          "value": "#1a1a1a"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 1.95,
+            "y": -30
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "fontSize": 11,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontWeight": "bold",
+        "color": "#1a1a1a"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "nice": false
+          }
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "reverse": true
+          }
+        },
+        "text": {
+          "value": "90.7% of all threatened species still end up well-documented"
+        }
       }
     }
   ],
-  "resolve": {"scale": {"x": "shared", "y": "shared"}}
+  "resolve": {
+    "scale": {
+      "x": "shared",
+      "y": "shared"
+    }
+  }
 }
