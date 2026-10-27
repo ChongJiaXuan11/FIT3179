@@ -28,7 +28,12 @@
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
-        "size": {"field": "occurrences", "type": "quantitative", "title": "Photo Records", "scale": {"range": [250, 6500]}, "legend": {"format": "~s"}},
+        "size": {
+          "field": "occurrences", "type": "quantitative",
+          "title": "Photo Records",
+          "scale": {"range": [250, 6500], "zero": false},
+          "legend": {"format": "~s"}
+        },
         "color": {"value": "#3d5a80"},
         "tooltip": [
           {"field": "state", "type": "nominal", "title": "State"},

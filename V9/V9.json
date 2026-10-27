@@ -28,7 +28,7 @@
         "x": {
           "field": "state", "type": "nominal",
           "sort": ["QLD", "VIC", "SA", "TAS", "NSW", "WA", "NT", "ACT"],
-          "axis": {"title": null, "labelAngle": 0}
+          "axis": {"title": "State", "labelAngle": 0}
         },
         "y": {
           "field": "count", "type": "quantitative",

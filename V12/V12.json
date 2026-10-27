@@ -64,7 +64,7 @@
             "field": "year",
             "type": "ordinal",
             "axis": {
-              "title": null,
+              "title": "Year",
               "labelAngle": -45,
               "values": [
                 2010,

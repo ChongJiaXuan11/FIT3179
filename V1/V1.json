@@ -25,7 +25,7 @@
           "field": "taxon_group", 
           "type": "nominal",
           "sort": ["Plants", "Insects", "Birds", "Mammals", "Reptiles", "Amphibians"],
-          "axis": {"labelAngle": 0, "title": null}
+          "axis": {"labelAngle": 0, "title": "Taxon group"}
         },
         "y": {
           "field": "record_count", 

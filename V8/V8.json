@@ -24,7 +24,7 @@
         "y": {
           "field": "NAME", "type": "nominal",
           "sort": ["Dandenong Ranges", "Garigal", "Cleland", "Onkaparinga River", "Berowra Valley", "Tamborine", "Barron Gorge", "Glass House Mountains", "Heathcote", "Khappinghat", "John Forrest", "Tarra-Bulga", "Grey Peaks", "Mornington Peninsula", "Midgegooroo"],
-          "title": null
+          "title": "Park"
         },
         "x": {
           "field": "occurrences_per_1000ha", "type": "quantitative",
